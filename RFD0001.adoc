@@ -1,6 +1,6 @@
 *Why a Worker-First Software Cooperative?*
 
-*(RFD #2, Untitled Co-op)*
+*(RFD #1, Untitled Co-op)*
 
 “[T]he political realm rises directly out of acting together, the
 ‘sharing of words and deeds.’” Hannah Arendt, The Human Condition, p.
@@ -368,7 +368,8 @@ technology research and development cooperative founded in 1974.
 Ikerlan's governing membership comprised both workers and
 user-customers. Initially, the user-customer members were other
 Mondragón cooperative firms, “though later, conventional firms were also
-admitted into this stakeholder group.”footnote:[Ibid at 300.]
+admitted into this stakeholder group.”footnote:[Imaz, Freundlich, and
+Kanpandegi, 2023 at 300.]
 
 Adopting a second-degree cooperative structure similar to Ikerlan's
 could allow the cooperative to establish formal relationships with other
@@ -507,8 +508,26 @@ As these various components matured and proved their value, they could
 become more comprehensive. The educational initiative could become a
 recognized training program or even partner with existing institutions,
 the mutual aid fund could develop into a chartered
-bank[multiblock footnote omitted], and the second-degree cooperative
-structure could expand to include a wider network of organizations.
+bank[multiblock footnote omitted]^,^footnote:[The transformative
+potential of cooperative banking extends beyond software. Consider
+semiconductor manufacturing: while conventional wisdom suggests that the
+capital intensity of semiconductor foundries (>$20B for a leading-edge
+fab) necessitates corporate ownership structures, this assumption
+reflects current financial constraints rather than technical or economic
+laws. A state-chartered cooperative bank could provide
+non-self-amortizing loans to a worker-owned semiconductor foundry,
+treating it as critical infrastructure rather than requiring commercial
+returns. Such a foundry could achieve TSMC-level technical excellence
+and economies of scale while operating under democratic ownership. This
+isn't purely theoretical - the Tennessee Valley Authority demonstrates
+how public financing can sustain technically sophisticated,
+capital-intensive operations. The key limitation isn't technical
+capability or economic efficiency, but rather our institutional
+imagination regarding how to finance public goods. The same principles
+could apply to other capital-intensive infrastructure like data centers,
+telecommunications networks, or energy systems.], and the second-degree
+cooperative structure could expand to include a wider network of
+organizations.
 
 [arabic, start=6]
 . {blank}
@@ -554,16 +573,16 @@ software cooperatives could market to larger enterprises with
 sympathetic values, e.g., B Corporations.
 
 For example, a federation of software cooperatives could collaboratively
-create and maintain open-source platforms analogous to
-GitHub.footnote:[Some GitHub alternatives, such as Codeberg, already
-exist.] These platforms would be designed to better accommodate
-collaborative ownership models. Or, cooperatives could unite to develop
-artificial intelligence technologies that prioritize explainability,
-dependability, and alignment with public interest over corporate profit
-motives. By applying production analysis techniques, and
-inter-cooperative governance structures, cooperatives can ensure these
-technological projects are economically viable and competitive with
-traditional alternatives.
+create and maintain open-source platforms analogous to GitHub. (Some
+GitHub alternatives, such as Codeberg, already exist.) These platforms
+would be designed to better accommodate collaborative ownership models.
+Or, cooperatives could unite to develop artificial intelligence
+technologies that prioritize explainability, dependability, and
+alignment with public interest over corporate profit motives. By
+applying production analysis techniques, and inter-cooperative
+governance structures, cooperatives can ensure these technological
+projects are economically viable and competitive with traditional
+alternatives.
 
 This approach both addresses practical concerns and challenges
 fundamental economic assumptions. By questioning assumptions such as
@@ -874,224 +893,230 @@ ____
 Mondragón's history underscores the importance of maintaining
 connections with broader labor movements and fostering internal
 solidarity, even as organizations grow and evolve. As Kasmir notes,
-"After the Ulgor strike [leaders were fired via a majority vote],
+"After the [1974] Ulgor strike [leaders were fired via a majority vote],
 cooperators had the reputation of not expressing solidarity with the
 rest of Mondragón's working class, and they were seen as increasingly
 isolated in their own privileged work world."
 
 The 2013 collapse of Fagor Electrodomésticos provides crucial lessons
-about how solidarity can become dysfunctional when separated from
-integrated decision-making processes. As Ortega and
-Uriartefootnote:[Ortega Sunsundegi, I., & Uriarte Zabala, L. (2015).
-Reios y dilemas del cooperativismo de Mondragón tras la crisis de Fagor
-Electrodomésticos. LANKI, Instituto de Estudios Cooperativos, Mondragon
-Unibertsitatea. Retrieved from http://www.lanki.coop] (2015) explain:
+about how solidarity mechanisms can become disconnected from effective
+decision-making. While the cooperative maintained formal democratic
+structures and inter-cooperative support systems, there emerged what
+Ortega and Uriartefootnote:[Ortega Sunsundegi, I., & Uriarte Zabala, L.
+(2015). Reios y dilemas del cooperativismo de Mondragón tras la crisis
+de Fagor Electrodomésticos. LANKI, Instituto de Estudios Cooperativos,
+Mondragon Unibertsitatea. Retrieved from http://www.lanki.coop] (2015)
+describe as a growing divide between workers and what was nominally
+their own enterprise. This organizational separation reflected deeper
+ideological transformations:
 
-"Se puso excesivo énfasis "Excessive emphasis was placed
+Las influencias de lo que algunos han The influences of what some
 
-en el aspecto jurídico de on the legal aspect of
+llamado "la izquierda fordista" son have called "the Fordist left"
 
-la participación en disputas participation in assembly
+palpables en este sentido. Es esta are palpable in this regard.
 
-de asamblea y muy poco en disputes and too little on
+una cultura de la izquierda que se This is a leftist culture that
 
-la fertilidad creativa de the creative fertility of
+expande en la fase del capitalismo expands in the phase of welfare
 
-la participación del worker participation in the
+del bienestar, para quien los capitalism, for whom the factors
 
-trabajador en el propio workplace itself."
+factores del desarrollo económico of economic development are
 
-puesto de trabajo."
+son un hecho dado al que no merece considered a given that does not
 
-This separation between formal participation and workplace integration
-became particularly problematic during the 2007-8 financial crisis, when
+la pena prestar demasiada atención, merit much attention. It focuses
 
-"la caída del 65% del mercado "The 65% collapse of the Spanish
+y que centra su acción en una instead on a dynamic of demands,
 
-español provoca una reducción market caused a reduction in
+dinámica reivindicativa en pos de pursuing greater gains and
 
-en la facturación de FED de Fagor Electrodomésticos' revenue
+mayores conquistas y derechos para rights for the working class in
 
-800 millones de euros (de los of 800 million euros (from
+la clase trabajadora en la lucha the struggle for a fairer
 
-1.800 millones de euros en 1.8 billion euros in sales
+por el reparto de la riqueza distribution of the economic
 
-ventas alcanzados en el 2006 achieved in 2006 to 1 billion
+económica generada. wealth generated.
 
-a los 1.000 millones de euros in 2008)"
+This pattern implies a breakdown of integrated decision-making. The
+authors reveal how deeply this separation has been naturalized when
+discussing challenges on the Governing Council, which is composed of
+worker-members who maintain their regular jobs while serving on the
+council:
 
-euros en 2008)"
+En estas circunstancias no es In these circumstances, it is
 
-The crisis exposed how managerial structures had gradually separated
-from democratic governance, creating conditions where worker solidarity
-became defensive rather than constructive. This organizational
-separation reflected deeper ideological transformations. As Ortega and
-Uriarte explain, the cooperative experienced a fundamental shift in how
-workers conceived their relationship to the enterprise:
+extraño oír voces que explicitan not unusual to hear voices
 
-"En estas nuevas condiciones "Under these new conditions
+la falta de conocimientos highlighting the lack of
 
-se afirma que el pensamiento it is affirmed that cooperative
+y de competencias suficientes knowledge and adequate skills
 
-cooperativista entra en thinking enters into decline
+de los miembros de este órgano, of the members of this body,
 
-declive y las influencias de and the influences of what
+cuando en situaciones muy who, in very complicated
 
-lo que algunos han llamado some have called 'fordist
+complicadas, tienen que tomar situations, are required to
 
-'la izquierda fordista' son left' are palpable in this
+decisiones muy difíciles sobre make very difficult decisions
 
-palpables en este sentido. sense. This is a culture of
+temas que en ocasiones tienen on issues that sometimes
 
-Es esta una cultura de la the left that expands in the
+una dimensión técnica no fácil involve a technical dimension
 
-izquierda que se expande en phase of welfare capitalism,
+de comprender that is not easy to understand
 
-la fase del capitalismo del for whom the factors of
+While Ortega and Uriarte propose giving council members more time and
+support - reasonable tactical solutions - their framing implicitly
+accepts a problematic division between technical and social expertise
+that should never have existed in the first place. Instead of workers
+participating meaningfully in strategic choices about their enterprise's
+future, and seeing themselves as responsible for the enterprise's
+sustainability, they increasingly related to management as traditional
+labor, focused on defending benefits from an apparently separate
+management structure, rather than engaging with fundamental business
+challenges.
 
-bienestar, para quien los economic development are a
+This ideological separation reinforced and was reinforced by the growing
+operational divide between technical and social governance. This
+disconnect became particularly problematic during the 2007-8 financial
+crisis, when:
 
-factores del desarrollo given fact that doesn't merit
+la caída del 65% the 65% drop
 
-económico son un hecho dado too much attention, and that
+del mercado español [provocó] in the Spanish market
 
-al que no merece la pena centers its action on a
+una reducción en la facturación [had] led to a reduction
 
-prestar demasiada atención, demanding dynamic in pursuit
+de FED de 800 millones de euros in FED's turnover of
 
-y que centra su acción en of greater conquests and
+(de los 1.800 millones de euros 800 million euros (from
 
-una dinámica reivindicativa rights for the working class
+en ventas alcanzados en el 2006 1.8 billion euros in sales
 
-en pos de mayores conquistas in the struggle for the
+a los 1.000 millones de euros in 2006 to 1 billion euros
 
-y derechos para la clase distribution of generated
+en 2008). in 2008).
 
-trabajadora en la lucha por economic wealth."
+The global financial crisis not only devastated sales but exposed the
+deeper cultural transformations within the cooperative. As Ortega and
+Uriarte explain:
 
-el reparto de la riqueza
+Este proceso coincide, a su vez, This process coincides, in turn,
 
-económica generada."
+con el relevo de la primera with the transition from the first
 
-This shift toward what the authors call "fordist left" thinking is
-particularly significant - workers began to see themselves as labor in
-opposition to management rather than as integrated worker-owners
-collectively responsible for the enterprise's sustainability. Rather
-than engaging with the complex dynamics of maintaining a cooperative
-business, worker consciousness shifted toward a more traditional model
-of claiming rights and benefits from an apparently separate management
-structure. This ideological separation reinforced and was reinforced by
-the growing operational divide between technical and social governance.
+generación de directores por una generation of directors to a new
 
-The global financial crisis not only devastated sales but exposed deeper
-cultural transformations within the cooperative. As Ortega and Uriarte
-explain:
+nueva generación de perfil "más generation with a "more technocratic"
 
-"Este proceso coincide, a su "This process coincides with
+tecnócrata" y en el que el carisma profile, where the charisma and
 
-vez, con el relevo de la the replacement of the first
+y la capacidad de liderazgo que leadership qualities attributed to
 
-primera generación de generation of directors by a
+se atribuyen a las generaciones previous generations are gradually
 
-directores por una nueva new generation with a 'more
-
-generación de perfil 'más technocratic' profile, where
-
-tecnócrata' y en el que el the charisma and leadership
-
-carisma y la capacidad de capacity attributed to
-
-liderazgo que se atribuyen previous generations were
-
-a las generaciones becoming diluted."
-
-anteriores se van diluyendo."
+anteriores se van diluyendo. fading.
 
 This transition led to what some veteran members characterized as
 "cooperativismo neoliberal":
 
-"el pensamiento cooperativista "cooperative thinking enters
+En estas nuevas condiciones se afirma In these new conditions, it is
 
-entra en declive y se abre into decline and gives way
+que el pensamiento cooperativista said that cooperative thinking
 
-paso a 'un sistema to 'a neoliberal cooperative
+entra en declive y se abre paso "un is in decline, and a "neoliberal
 
-cooperativista neoliberal' system' in which people
+sistema cooperativista neoliberal" cooperative system" is emerging,
 
-en el que la gente empieza begin to think more about
+en el que la gente empieza a pensar in which people begin to think
 
-a pensar más 'en la cartilla, 'the bankbook, about money,
+más "en la cartilla, en los dineros, more "about their accounts, about
 
-en los dineros, en los about interest rates and
+en los intereses y no en la money, about personal interests,
 
-intereses y no en la not about the cooperative.'"
+cooperativa". and not about the cooperative."
 
-cooperativa.'"
+This transformation might parallel what Hopper & Hopper term
+'(so-called) Experts' - MBA-trained managers who prioritize financial
+metrics over operational knowledge and integrated
+decision-making.footnote:[While Ortega and Uriarte's description of the
+'more technocratic' new generation of directors and the subsequent
+decline of cooperative thinking in favor of financial considerations
+suggests similar patterns, we would need more detail about these
+managers' backgrounds, training, and specific approaches to be confident
+of such an equivalence.] The shift Ortega and Uriarte document aligns
+with broader patterns Hopper & Hopper identify in the degradation of
+managerial practice.
 
 The solidarity mechanisms of the broader Mondragón network, while
-well-intentioned, may have inadvertently enabled this dysfunction.
-According to one cooperative manager:
+well-intentioned, may have inadvertently exacerbated this dysfunction.
+According to some interviewees, inter-cooperative monetary aid may have
+had
 
-"todas estas ayudas no han "all this aid may have had
+un efecto anestésico, an "anaesthetic" effect —
 
-tenido un efecto anestésico, an anesthetic effect, in
+en el sentido de que meaning it may have
 
-en el sentido de que han the sense that they have
+han evitado una reacción más prevented a stronger response
 
-evitado una reacción más prevented a more forceful
+contundente por parte de la from the cooperative. They
 
-contundente por parte de reaction from the cooperative,
+cooperativa, y el pensamiento also think that if there had
 
-la cooperativa, y el and the thought that if
+de que si hubiera habido hace been a little less solidarity
 
-pensamiento de que si there had been somewhat less
+años algo menos de solidaridad years ago, perhaps Fagor
 
-hubiera habido hace años solidarity years ago, they
+se hubiera actuado, quizá, de Electrodomésticos would have
 
-algo menos de solidaridad might have acted, perhaps,
+una manera más responsable acted more responsibly by
 
-se hubiera actuado, quizá, in a more responsible way
+empujando a Fagor being "pushed to do its
 
-de una manera más pushing Fagor Electrodomésticos
+Electrodomésticos "a hacer homework."
 
-responsable empujando a 'to do their homework.'"
-
-Fagor Electrodomésticos
-
-'a hacer sus deberes.'"
+sus deberes".
 
 These challenges culminated in a profound disconnect between workers and
 what was nominally their own enterprise. The authors note:
 
-"Uno de los hechos que "One of the facts that
+Uno de los hechos que especialmente One of the facts that was
 
-especialmente llamaba la especially drew attention
+llamaba la atención en el contexto especially striking in the
 
-atención en el contexto de in the context of the
+de las manifestaciones, las context of the demonstrations,
 
-las manifestaciones...era demonstrations...was the
+declaraciones públicas y entrevistas public statements, and media
 
-la gran distancia que great distance that members
+en los medios de comunicación de interviews of Fagor
 
-reflejaban los socios showed toward what, at
+socios de Fagor Electrodomésticos, Electrodomésticos partners was
 
-respecto a lo que, en cuanto least in terms of ownership,
+era la gran distancia que reflejaban the noticeable distance that
 
-a la propiedad por lo menos, was their own business
+los socios respecto a lo que, en the partners displayed regarding
 
-era su propio proyecto de project."
+cuanto a la propiedad por lo menos, what, at least in terms of
 
-empresa."
+era su propio proyecto de empresa. ownership, was their own
+
+business project.
 
 This pattern, where workers react to decisions rather than participating
 in their formation, continues to manifest in contemporary tech
 organizations. Like Fagor's workers, OpenAI employees lacked the
 integrated context needed for genuine strategic participation when
 OpenAI's board briefly removed Sam Altman as CEO in 2023. As suggested
-above in section 5, workers' immediate solidarity with the Altman seems
-to have prevented deeper consideration of governance issues. Both cases
-demonstrate how formal deliberative structures, when separated from
-day-to-day operational integration, can lead to strategic blunders.
+earlier in section 5, workers' immediate solidarity with the Altman
+seems to have prevented deeper consideration of governance issues. Both
+cases demonstrate how formal deliberative structures, when separated
+from day-to-day operational integration, can lead to strategic
+blunders.footnote:[Admittedly, 2007-era consumer appliance manufacturing
+at the world's largest industrial worker cooperative is a different
+context from a 2023 GenAI Silicon Valley startup.]
 
 Our proposed ensemble programming and rotation practices aim to address
 these failure modes directly by preventing the separation of technical
@@ -1213,7 +1238,7 @@ build a robust culture of skillful communication, and practice
 thoughtful, interdisciplinary research and development.] working people
 — _not_ just the founders — as rockstars. Not everyone has fully
 articulated their rock-stardom, but everyone has it in them (caveated by
-footnote 62). Leadership co-creates the stage.footnote:[One way to
+footnote 64). Leadership co-creates the stage.footnote:[One way to
 counteract structural biases towards commons enclosure by capital would
 be to prevent potential 'rug pulls' in open-source projects. A software
 cooperative could (a) adopt the Mozilla Public License (MPL) or Affero
@@ -1232,7 +1257,7 @@ ____
 Important Side Note on Professionalism, Propriety, and Profanity
 ____
 
-If you read footnote 62, you encountered the word _asshole_. We used
+If you read footnote 64, you encountered the word _asshole_. We used
 this word because we believe it is the best tool for the job. Later, in
 section 16, we use the word _bullshit_, referencing David Graeber’s
 brilliant formulation “bullshit jobs.” Our philosophy on profane words
@@ -1686,9 +1711,9 @@ relationship experience before taking on single contact
 responsibilities.
 
 Financial operations have regulatory requirements for clear
-accountabilityfootnote:[Allen Holub has a thought-provoking blog post
-that problematizes the emphasis placed on accountability in workplace
-and corporate culture (#NoAccountability, 11 July 2022,
+accountabilityfootnote:[Allen Holub problematizes the emphasis placed on
+accountability in workplace and corporate culture (#NoAccountability, 11
+July 2022,
 <https://holub.com/noaccountability/[[.underline]#https://holub.com/noaccountability/#]>).
 It stands in some tension with Hopper & Hopper’s approving quotation of
 Florence Nightingale: “someone has to be in charge”. What they and she
@@ -1978,7 +2003,7 @@ Happened. Notes on the Crises Blog, 24 Sept 2024.
 <https://perma.cc/6YVY-4NDX[[.underline]#https://perma.cc/6YVY-4NDX#]>]
 inspires us to suggest inclusive emergency lending. The Federal
 Reserve's 1973 plan to provide emergency liquidity support to the entire
-Savings & Loan industry via the Federal Home Loan Banks^78^ demonstrates
+Savings & Loan industry via the Federal Home Loan Banks^80^ demonstrates
 the potential for central banks to support specific economic sectors.
 Cooperatives could advocate for the inclusion of worker-owned
 enterprises in such emergency lending programs, ensuring they have
