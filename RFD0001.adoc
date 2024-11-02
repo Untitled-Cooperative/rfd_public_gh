@@ -1,0 +1,2569 @@
+*Why a Worker-First Software Cooperative?*
+
+*(RFD #1, Untitled Co-op)*
+
+“[T]he political realm rises directly out of acting together, the
+‘sharing of words and deeds.’” Hannah Arendt, The Human Condition, p.
+198
+
+[arabic]
+. {blank}
++
+____
+Introduction
+____
+
+A small group of founders develops some groundbreaking technology in a
+garage. They attract investors who provide funds to scale the business
+in return for significant ownership stakes. This revolutionary
+enterprise then upends established incumbents, dominates the market, and
+becomes enormously profitable. The investors reap huge gains upon exit,
+and the founders, while not as enriched as the investors in absolute
+terms, still do extremely well — perhaps even well enough to retire
+early. Early employees also fare quite well.
+
+For those concerned about the immense wealth inequalities in the U.S., a
+problem with this model is that everyone else does not share in this
+prosperity. While tech workers _tend_ to be on the high__ish__ end of
+the income distribution, it is often argued that the original vision was
+not theirs, they did not risk much at the beginning, and so later
+workers should not expect payouts comparable to those of the founders
+and very early hires. The system is working, one might say.
+
+[arabic, start=2]
+. {blank}
++
+____
+The Critical Importance of Integrated Decision-Making
+____
+
+Before getting into why the system is actually _not_ working, and how
+maybe to fix some of it, we highlight a lesson from early American
+business history: the principle of integrated decision-making. This
+means that the same people who will execute decisions must be deeply
+involved in making them.footnote:[Kenneth Hopper and William Hopper, The
+Puritan Gift: Reclaiming the American Dream Amidst Global Financial
+Chaos. I.B. Tauris, 2007 at 25.] This is not the same as democratic
+voting. The Puritan settlers of Massachusetts Bay succeeded because they
+spent months meticulously planning their migration before deciding
+whether to proceed, with those who would implement plans being integral
+to their development. They studied past failures, conducted pilot
+projects, and made detailed contingency plans. Their success contrasted
+sharply with failed settlements that made high-level decisions first and
+worked out details later. This means:
+
+* {blank}
++
+____
+Decisions cannot be made "in principle" and handed off to others for
+implementation
+____
+* {blank}
++
+____
+Democratic voting is preceded by detailed planning by those who would
+execute
+____
+* {blank}
++
+____
+Every major initiative needs pilot testing before full deployment
+____
+* {blank}
++
+____
+Study both successes and failures in similar efforts
+____
+* {blank}
++
+____
+Maintain adequate reserves for contingencies
+____
+
+For a software organization, integrated decision-making could manifest
+as "mob programming" (also known as ensemble programming or software
+teaming), which is an engineering method explored by the Mob Mentality
+Show (and
+others).footnote:[<https://www.youtube.com/@mobmentalityshow[[.underline]#https://www.youtube.com/@mobmentalityshow#]>.
+See also Woody Zuill & Kevin Meadows, Software Teaming: A Mob
+Programming, Whole-Team Approach. 2022.] This method involves the entire
+team working together at a single workstation (physical or virtual), by
+rotating through specific roles, primarily the 'typer' (or 'driver') who
+operates the keyboard and the 'talker' (or 'navigator') who guides the
+implementation. Other team members actively participate through
+observation and discussion, creating a fluid, collaborative environment.
+(We will explore in Sections 17 and 18 how the mob/ensemble practice
+might extend beyond code to diverse aspects of business operations.)
+
+Consider a team implementing a feature to import data from Excel files.
+During a session, team members cycle through different roles: typing,
+talking, watching what the typer is doing, or listening to what the
+talker is saying to the typer. The team includes people who regularly
+work across different aspects of software development - testing,
+operations, architecture, coding - as these aren't separate roles but
+different facets of the work that any team member might engage in.
+
+While the session is happening, each person focuses intently on their
+current role rather than trying to actively contribute from their
+specialty. Yet their diverse perspectives - architectural design,
+security, database optimization, systems operations - subtly inform how
+they engage with the code, often in ways that aren't verbalized in the
+moment.
+
+For instance, a security specialist probably would _not_ point out
+vulnerabilities while typing, navigating, or listening (because their
+attention would be on the task at hand). Instead, their security mindset
+influences how they understand and work with the code. These different
+perspectives and their influence on the work might only become apparent
+during the end-of-day retrospective, or even the next day after team
+members have had time to process what they learned.
+
+The mob programming practice could become particularly powerful when
+applied to new initiatives through a two-stage Minimum Viable Product
+(MVP) process. If workers were to propose a new system or process, they
+would first secure democratic approval to allocate hours for MVP
+development. These hours would come from their existing work time - no
+specialized positions would be created. The same people proposing the
+system would build it, ensuring that those who conceive an idea are also
+those who will implement it. After MVP development, they would
+demonstrate the working system to the general membership for a second
+vote on whether to scale it. This pattern of concrete demonstration
+followed by collective evaluation provides a reality-check against
+unnecessary complexity. When people must show rather than just tell, and
+when they must implement their own proposals rather than hand them off
+to others, potential sources of bureaucratic bloat are naturally
+prevented. And when questions about security, usability, or performance
+arose, the relevant experts would have been immersed in the code's
+evolution.
+
+The ensemble work pattern may be a way to restore the primacy of clear
+communication, explainability, and dependability. The “Great Engine”
+companies - DuPont, General Motors, AT&T, IBM and others that dominated
+mid-20th century American industry - achieved this through hierarchical
+structures, but modern communication technologies enable new
+possibilities. Tools like Zulip's threaded discussions and Oxide's
+Request for Discussion (RFD) system can create persistent, searchable
+channels for decision-making and organizational memory, while mob
+programming sessions provide real-time integration of knowledge and
+capability. Together, these can potentially achieve what hierarchy
+historically provided - clear information flow, effective coordination,
+dependability, and explainability - but in a more democratic and
+distributed way.
+
+However, such a project should avoid McCallum's error at the Erie
+Railroad of trying to engineer human judgment out of the system. The
+goal is not to create a perfect system that runs automatically, but
+rather to enable human judgment to function effectively at scale. We are
+trying to describe a plausible future, and our first guess at how to
+achieve it, in light of the facts. When the facts change, we try to
+realize that they changed, and change our beliefs. The technology, or at
+very least the technology primitives, in principle already enable new
+forms of organization; the bigger challenge is probably social.
+
+The ensemble/mob practice emerged from experimental work at Hunter
+Industries in the early 2010s, where teams discovered that working
+together continuously led to better design, better code, fewer defects,
+and more engaged developers.footnote:[Zuill, Woody, and Kevin Meadows.
+"Mob programming: A whole team approach." Agile 2014 Conference,
+Orlando, Florida. Vol. 3. 2016.
+<https://web.archive.org/web/20241002162129/https://www.agilealliance.org/wp-content/uploads/2015/12/ExperienceReport.2014.Zuill_.pdf>]
+Rather than the traditional cycle of individual work followed by code
+review, mob programming enables continuous review and improvement. This
+real-time collaboration often prevents problems that would be costly to
+fix later. It also encourages a state of "team flow", where a group
+works smoothly togetherfootnote:[Zuill & Meadows, 2022 at 163.],
+addressing issues as they arise and making decisions in real-time.
+
+Mob programming directly implements the principles of integrated
+decision-making:
+
+* {blank}
++
+____
+Decisions cannot be separated from implementation - they happen
+simultaneously
+____
+* {blank}
++
+____
+Every major initiative undergoes continuous pilot testing as the team
+works (e.g. via “Test Driven Development”)
+____
+* {blank}
++
+____
+The ensemble studies both successes and failures in real-time
+____
+* {blank}
++
+____
+The team maintains shared context about decisions and their implications
+____
+
+This practice could form the foundation for many aspects of enterprise
+operations, from software development to financial planning to
+governance.
+
+[arabic, start=3]
+. {blank}
++
+____
+The Problem with Wealth Super-Inequality in Tech
+____
+
+The insiders who became extraordinarily wealthy in the Introduction were
+not proportionately instrumental to the business's success. To be fair,
+they were _somewhat_ more responsible. And if not for their founding,
+the business probably would not exist, nor, quite possibly, would any
+analog. But this historical contingency does not mean the
+founders/insiders are infinitely more responsible than employee number
+11,781. They are not even 20-fold more (pro rata) responsible. It is not
+that the insiders' remuneration is unearned, but rather that their
+_exorbitant_ remuneration is unearned. Not all, but _most_ of their
+excess fortune has no justification other than them having been in the
+right place at the right time. Early-life decisions — whether of a
+company, a career, or a mammal — are generally more consequential than
+later ones; timing often outweighs who is making the decision or the
+singular flair with which they made it.
+
+Some argue that without the lure of huge rewards and the taking of huge
+risks, the economy would not be as successful and productive as it is. I
+do not buy this. Why should we incentivize anyone to risk personal
+bankruptcy? There are more humane ways to encourage people to
+experiment.footnote:[Such as funding more five-year graduate
+fellowships. Their humaneness is a mixed bag, depending greatly on the
+local academic environs, but their stipends typically cover basic living
+expenses. Stipulating and enforcing portability for such fellowships
+could significantly improve working conditions for early-career
+researchers.] Without exorbitant rewards, people might pull fewer
+all-nighters, yes. We might have fewer celebrity CEOs. "Shark Tank"
+might have a smaller viewership. But these are not meaningful proxies
+for, or contributors to, success or productivity or innovation. There is
+nothing wrong with occasionally staying up all night, but making it a
+habit is almost always unwise — and pressuring others to do so, even
+indirectly through cultural norms that celebrate such behavior, is
+thoroughly stupid. Grinding boosts short-term productivity — but harms
+it in the long term.footnote:[Unless, of course, we expand our
+definition of 'productivity' to include the medical goods and services
+employed to treat the chronic and acute health issues caused by the
+"grind culture" imposed upon workers. More concretely, if a worker has a
+heart attack, that is easily an extra $10,000 of 'productivity' due to
+the medevac alone!] Exorbitant rewards both exacerbate inequality and
+encourage overwork.
+
+[arabic, start=4]
+. {blank}
++
+____
+Challenging the Winner-Take-All Mindset
+____
+
+The problem with this __uber-capitalist__footnote:[See It’s OK to be
+Angry About Capitalism by Bernie Sanders, 2023] bias is not only that
+disproportionately rewarding first movers is unnecessary, unfair, and
+unhealthy. This incentive structure also perpetuates cults of
+personality and authoritarian dynamics. It normalizes a
+_winner-take-all_ mindset, which in turn drives a _win-at-all-costs_
+mindset. For if the winner takes all, the losers are left with nothing.
+As Peter Thiel infamously observed, competition is the last thing
+capitalists wantfootnote:[Peter Thiel, Competition is for Losers, Wall
+Street Journal. 12 Sept 2014.
+https://www.wsj.com/articles/peter-thiel-competition-is-for-losers-1410535536].
+They seek moats, monopolies, monopsonies, and chokepointsfootnote:[Cory
+Doctorow & Rebecca Giblin, Chokepoint Capitalism: How Big Tech and Big
+Content Captured Creative Labor Markets and How We'll Win Them Back.
+2022, Beacon Press.] — maximizing profit and minimizing
+effort.footnote:[That said, as Frederic S. Lee demonstrates in Heterodox
+Microeconomics (2017), a fine line often exists between predatory or
+abusive pricing behavior and the practices firms use in reasonable
+market governance to sustain themselves as going concerns — a topic we
+will revisit in sections 6, 8, 18, and 19.]
+
+Relentless winner-take-all growth is unhealthy. Meanwhile, immense
+wealth is not even a great incentive for the next big thing. The
+possibility of immense wealth might have helped give us our tech
+darlings, but it also gave us our tech deplorables, like Theranos and
+FTX. Good ideas are not a finite resource, nor do people get bored of
+creating them. Winner-take-all might have summoned impressive individual
+efforts in the past, but that does not mean it was the only or best way.
+Think, for example, of separate clinical and preclinical tests in
+separate corporate silos proceeding and failing — independently, in
+isolation, and in ignorance.[multiblock footnote omitted] This
+inefficiency is exacerbated by the current patent system and
+financialization of the pharmaceutical industry, which often prioritize
+short-term financial gains over long-term innovation and public health
+outcomes. These systemic inefficiencies in pharmaceutical innovation are
+signs of deeper and broader pathologies in how we approach complex
+global issues. With 1.5 °C of warming baked into the climate cake, we
+must today rise to an occasion piled far higher with difficulty than we
+have been past accustomed to.
+
+We see evidence of the winner-take-all mentality in, e.g., the Microsoft
+portfolio of companies and their business models, as well as in the
+licensing and trademark-related behavior of other software companies and
+cloud providers such as[multiblock footnote omitted] HashiCorp, MongoDB,
+Amazon AWS, Elastic, and Redis. In the case of Microsoft, the bare facts
+of (1) a large ownership stake in OpenAI, (2) full ownership of GitHub,
+and (3) what seems an unfathomably large subscriber base for Office 365
+from US Federal agencies (not to mention the private sector) should be
+sufficient to dismay any advocate of software freedom, individual
+privacy, and healthy competition. More explicitly: if you are bothered
+that companies like Google and Amazon use your browsing, searching, and
+purchasing habits to try to sell you more stuff, just wait until
+companies start deploying Large Language Models (LLMs) for similar (or
+worse) purposes. Have you seen how quickly ChatGPT can generate an
+accurate summary of a book-length document? Imagine this capability
+deployed at scale and pointed at not just analyses of keywords and URL
+visit patterns, but rather the actual semantic content of the sites we
+visit and the ideas we type.
+
+GitHub is a fabulous and extremely useful tool. And currently, it plays
+a valuable societal role in affording software commons. However,
+anything that gets publicly committed to GitHub is fair game for OpenAI
+to leverage in improving its LLMs; when combined with OpenAI’s formal
+partnership with GitHub Copilot, it is difficult to regard OpenAI’s
+relationship to GitHub data as anything less than one of privilege. This
+is the sort of “moat” or “flywheel” that venture capitalists love. It is
+a self-reinforcing process that situates GitHub and OpenAI as the
+platforms of choice due to their superior adoption and training data.
+However, with apologies to George R. R. Martin, this particular
+flywheel, which answers mostly to oligarchs and their sycophants, needs
+breaking rather than turning.footnote:[In the hybridized spirit of
+idealism and pragmatism that this RFD hopefully embodies, the PR for
+this RFD is a “cross-post” of the one hosted in the Codeberg repo. The
+idealist part is that the primary repo is with Codeberg; the pragmatic
+part is that I have made no attempt at some sort of automated
+integration of the two separate discussion spaces.]
+
+[arabic, start=5]
+. {blank}
++
+____
+A Hypothetical Software Cooperative
+____
+
+A new software cooperative could initially organize itself around
+principles of a worker-first second-degree cooperativefootnote:[Also
+known as a _second-order_ cooperative, a _second-tier_ cooperative, or a
+_multistakeholder (MSC)_ cooperative.], while remaining open to
+structures and relationships that may arise through its operations, to
+the extent that they do not diminish worker primacy.footnote:[Rather
+than prescribing specific complementary organizations, educational
+initiatives, and mutual aid funds, the cooperative could create
+conditions for such elements to grow organically with members'
+interests.] This approach, although inspired by Mondragón's
+evolutionfootnote:[Ramon Flecha & Ignacio Santa Cruz, Cooperation for
+Economic Success: The Mondragón Case. Analyse & Kritik, pp 157–170. Jan
+2011.]^,^footnote:[Imaz, Freundlich, and Kanpandegi; chapter 10 in S.
+Novkovic et al. (eds.), Humanistic Governance in Democratic
+Organizations, Humanism in Business Series, 2023.], recognizes that the
+cooperative's true form and function will develop through complex
+interactions among membersfootnote:[Ralph D. Stacey and Chris Mowles,
+Strategic Management and Organisational Dynamics: The challenge of
+complexity to ways of thinking about organisations, 7th ed. 2016. At
+189.] and with a broader (and sometimes hostile) environment.
+
+An example of the second-degree structure in Mondragón is Ikerlan, a
+technology research and development cooperative founded in 1974.
+Ikerlan's governing membership comprised both workers and
+user-customers. Initially, the user-customer members were other
+Mondragón cooperative firms, “though later, conventional firms were also
+admitted into this stakeholder group.”footnote:[Imaz, Freundlich, and
+Kanpandegi, 2023 at 300.]
+
+Adopting a second-degree cooperative structure similar to Ikerlan's
+could allow the cooperative to establish formal relationships with other
+organizations from the outset, potentially including other tech
+cooperatives, ethical tech companies, or non-profit organizations that
+could benefit from the cooperative's software. These organizations would
+become members of the cooperative (alongside the electorally-prioritized
+worker-members), providing, potentially, market access,
+structurally-constrained financial support, and a built-in user base for
+the software being developed.
+
+The cooperative's financial structure should be designed from inception
+to support both democratic principles and operational resilience through
+multiple mechanisms: initial worker-owners would contribute capital
+according to their means (subject to a ceiling), while ongoing capital
+accumulation would be linked to hours worked rather than initial buy-in;
+mandatory contributions to indivisible reserves would be built into
+cost-plus pricing methods to provide buffers against market pressures;
+and transparent systems would track both collective and individual
+capital accounts, with workers accumulating withdrawable equity through
+hours worked while a portion of surplus goes to collective reserves.
+
+To incentivize user-member participation, the cooperative could offer
+(necessarily constrained) voting rights, as well as patronage dividends
+based on usage or a special class of membership shares.footnote:[One
+idea for aligning individual member incentives with a cooperative
+network's long-term success is implementing a single utility token
+system. In this system, members would exchange (e.g.) dollars for tokens
+at a centrally determined rate, using these tokens to purchase equity in
+any affiliated cooperative. Dividends would be calculated based on
+percent equity and paid out in dollars. The token could also be used to
+purchase products or services from member cooperatives, at their
+discretion. The idea here would be to create a semi-closed micro-economy
+that reinforces cooperative principles while providing an attenuated
+sort of internal liquidity. The token's price, being centrally managed,
+would be insulated from external market volatility. Members could only
+"cash out" by selling tokens back to a network-operated agent, and
+subject to various constraints. While not offering direct price
+discovery, this system could provide insights into cooperative health
+through metrics like equity demand, dividend yields, and token
+velocity.] This approach, after Arizmendiarrieta, seeks to align user
+interests with the cooperative's long-term success while maintaining
+worker control.footnote:[While transparency can help identify conflicts
+of interest and external influences, complete transparency may not
+always be desirable, as Buterin (2022 at 319) argues. Cooperatives could
+implement sufficient transparency for accountability while protecting
+individual privacy where needed. This might involve using cryptographic
+techniques similar to those used in some blockchain systems, allowing
+verification of important information without revealing all details.]
+This structure could be fortified by embedding protections against
+service degradationfootnote:[The technical term for this is
+_enshittification_. It is vividly exemplified by the Muskification of
+Twitter/X. See Cory Doctorow, Pluralistic: Leaving Twitter had no effect
+on NPR's traffic, 14 Oct 2023.
+<https://pluralistic.net/2023/10/14/freedom-of-reach/#ex>] and user
+exploitation in the cooperative's founding documents. These would
+establish legally binding user rights, including privacy, quality of
+service, and fair treatment, making it constitutionally challenging for
+the cooperative to engage in practices that undermine user interests or
+platform quality.
+
+Alongside this structure, the cooperative could develop educational
+programs in their software niche. This reflects Mondragon's origins,
+which began with Arizmendiarrieta's vocational training school in 1943.
+The software cooperative could hold regular skill-sharing sessions or
+develop online courses. The goal would be to foster a community of
+skilled individuals and cultivate a shared vision and set of values.
+
+Education is a key interface to democracy. And just as the User
+Experience of software is enormously important for its adoption, the
+Developer Experience is crucial to the adoption of a tech stack. A
+software cooperative ought to be keenly attuned to the user/developer
+experience of its members as they interact with the cooperative in all
+senses. In software development, long cycle times (e.g. the time between
+coding a feature and finishing the automated test suite, or
+alternatively, the time between merging to main and being live in
+production) are a red flag suggesting a subpar developer experience.
+Maintaining a vibrant cooperativist spirit will probably involve an
+analogous sensitivity to the developer-practitioner-user experience of
+democracy. There are many different ways to have a meeting or
+deliberative session (e.g. asynchronous vs. synchronous). *Finding the
+right formats for the situation will probably be important. And the
+situation will often be different from “last time”.*
+
+The experiences of Mondragón — and recent events at OpenAI — highlight
+the importance of informed and critical thinking in organizational
+culture. In Mondragón, shifts in managerial ideology towards
+'efficiency' (in parallel with the broader advent of neoliberalism)
+created tensions with the cooperative's founding principles. In their
+1996 book, Kasmirfootnote:[Sharryn Kasmir, The Myth of Mondragón:
+Cooperatives, Politics, and Working-Class Life in a Basque Town. June C.
+Nash, Editor. State University of New York Press, Albany, 1996.] notes
+that "managers [had] shed their cooperativist ideology in favor of an
+'efficiency' ideology," arguing for more "economistic or capitalistic
+changes." This ideological shift undermined the cooperativist spirit,
+and had it not been challenged, could have been devastating.
+
+Complementarily, recent OpenAI leadership drama demonstrates the
+potential pitfalls when workers lack the full context for major
+decisions. When OpenAI's board of directors briefly removed Sam Altman
+from his role as CEO in November of 2023, most employees reacted based
+on immediate concerns and personal
+loyaltiesfootnote:[https://web.archive.org/web/20241006075739/https://www.wired.com/story/openai-staff-walk-protest-sam-altman/],
+potentially overlooking deeper
+ethicalfootnote:[https://perma.cc/M8FZ-2BET]^,^footnote:[https://perma.cc/8BCR-6XKJ]
+or strategic issues that might have motivated the board's actions.
+
+The cooperative could establish or join a mutual aid fund among its
+network of member organizations and independent developers. This fund,
+inspired by Mondragón’s Lagun Aro social welfare systemfootnote:[Flecha
+& Santa Cruz, 2011], could serve as a partial financial safety net. Each
+member would contribute a small percentage of their monthly revenue or a
+fixed amount, and the fund would be cooperatively managed. It could be
+used for providing short-term loans or covering unexpected expenses.
+
+In addition to these formal structures, the cooperative could develop
+'unwritten rules' to guide decision-making processes, particularly when
+dealing with complex multi-stakeholder issues. These informal practices
+could help balance the interests of different stakeholder
+groupsfootnote:[Imaz, Freundlich, and Kanpandegi, 2023]. For example,
+when a decision primarily affects one group of members (such as workers
+or users), other stakeholders could voluntarily step back from the
+decision-making process, allowing those most impacted to have a stronger
+voice. This flexible approach, as seen in Mondragón cooperatives like
+Ederlan Tafalla, Eroski, and Caja Laboral (now Laboral Kutxa), can help
+maintain democratic principles while addressing practical challenges
+that arise in multi-stakeholder organizations. These unwritten rules
+would not replace formal governance structures but would complement
+them, providing a cultural framework for collaborative decision-making.
+
+Financially, this structure could provide a foundation for the new
+cooperative. Member organizations could contribute capital, either
+through membership fees or by purchasing shares.
+
+As these various components matured and proved their value, they could
+become more comprehensive. The educational initiative could become a
+recognized training program or even partner with existing institutions,
+the mutual aid fund could develop into a chartered
+bank[multiblock footnote omitted]^,^footnote:[The transformative
+potential of cooperative banking extends beyond software. Consider
+semiconductor manufacturing: while conventional wisdom suggests that the
+capital intensity of semiconductor foundries (>$20B for a leading-edge
+fab) necessitates corporate ownership structures, this assumption
+reflects current financial constraints rather than technical or economic
+laws. A state-chartered cooperative bank could provide
+non-self-amortizing loans to a worker-owned semiconductor foundry,
+treating it as critical infrastructure rather than requiring commercial
+returns. Such a foundry could achieve TSMC-level technical excellence
+and economies of scale while operating under democratic ownership. This
+isn't purely theoretical - the Tennessee Valley Authority demonstrates
+how public financing can sustain technically sophisticated,
+capital-intensive operations. The key limitation isn't technical
+capability or economic efficiency, but rather our institutional
+imagination regarding how to finance public goods. The same principles
+could apply to other capital-intensive infrastructure like data centers,
+telecommunications networks, or energy systems.], and the second-degree
+cooperative structure could expand to include a wider network of
+organizations.
+
+[arabic, start=6]
+. {blank}
++
+____
+The Case for Worker-First Software Cooperatives
+____
+
+To address concerns about technology concentration and the potential
+misuse of advanced technologies like LLMs,
+cooperativesfootnote:[Worker-owned cooperatives are not new. From the
+early Christian communities described in the Book of Acts, through
+medieval guilds and monasteries, to the Rochdale Pioneers of the 19th
+century, cooperative models have a rich history of providing
+alternatives to dominant economic structures (Schneider, 2018). The
+International Cooperative Alliance (ICA) traces the modern cooperative
+movement back to 1844 (ICA, 2015, <https://perma.cc/Y2RE-3MUA>, p ix).
+Software cooperatives can build upon this legacy.] could develop
+open-source technological infrastructure, while understanding Frederic
+S. Lee's concepts of market governancefootnote:[Frederic S. Lee, Ed.
+Tae-Hee Jo, Microeconomic Theory: A Heterodox Approach. London and New
+York: Routledge, 2017 at 66.]. As outlined above, a multi-stakeholder
+approach provides a model — combining a second-degree cooperative
+structure with educational initiatives and a mutual aid fund. However,
+the complexity of balancing multiple stakeholder interests, maintaining
+democratic processes at scale and longitude, and competing in a market
+dominated by traditional corporate structures could present significant
+hurdles. While cooperatives can offer promising alternatives, they are
+not a panacea and will require ongoing adaptation and reflexive
+operationfootnote:[Stacey & Mowles at 500].
+
+The potential market for such cooperative ventures is significant;
+platforms like GitHub boast over 100 million usersfootnote:[James
+Governor, State of Open: 100m and counting. A UK conference that
+matters. RedMonk, February 6, 2023.] as of 2023. We should also note
+that enterprise adoption is often key to long-term success.footnote:[See
+generally James Governor, Open Source Foundations Considered Helpful,
+RedMonk, September 13, 2024. This article’s emphasis on enterprise trust
+and adoption (via CNCF as described therein) implies that it is a key
+factor in the long-term success and sustainability of open source
+projects.] Alongside individuals and other worker-first cooperatives,
+software cooperatives could market to larger enterprises with
+sympathetic values, e.g., B Corporations.
+
+For example, a federation of software cooperatives could collaboratively
+create and maintain open-source platforms analogous to GitHub. (Some
+GitHub alternatives, such as Codeberg, already exist.) These platforms
+would be designed to better accommodate collaborative ownership models.
+Or, cooperatives could unite to develop artificial intelligence
+technologies that prioritize explainability, dependability, and
+alignment with public interest over corporate profit motives. By
+applying production analysis techniques, and inter-cooperative
+governance structures, cooperatives can ensure these technological
+projects are economically viable and competitive with traditional
+alternatives.
+
+This approach both addresses practical concerns and challenges
+fundamental economic assumptions. By questioning assumptions such as
+perfect information in markets and profit maximization as the path to
+optimal social outcomes, cooperatives can articulate a vision of
+economic value that includes social and environmental factors. This
+critical perspective enables cooperatives to justify their alternative
+approaches not just as ethical choices, but as economically sound
+strategies for creating sustainable, democratic workplaces. In doing so,
+they can advocate for federal and state policy changes that recognize
+and support their structures.
+
+Even within a cooperative organization, dynamics will remain complex,
+and will require adaptability and responsiveness to the often unplanned
+realities of day-to-day operations. This means setting the stage(s) for
+ongoing reflection and adjustment, where members are attuned to the
+evolving patterns of their interactions and ready to modify structures
+and practices as needed.footnote:[Stacey and Mowles at 447] At the
+ensemble/shop/small-team level, a post-session retrospective may be
+useful.footnote:[In a retrospective, the ensemble asks itself questions
+such as "’Should we do more of what went well? Should we change what
+didn't go well?’" Zuill & Meadows, 2022 at 25.] At the same time
+(particularly in a remote work context): “Prefer action over endless
+debate. We try it as soon as we have an idea instead of continuing to
+debate it.”footnote:[Zuill & Meadows, 2022 at 110.] This nuanced posture
+toward deliberation could build resilience and avoid the pitfalls of
+rigid thinking and fixed mindsets.
+
+As software cooperatives develop alternative economic structures, they
+should also recognize the current shift towards higher-level
+abstractions, integrated developer experiences, and
+Platform-as-a-Service (PaaS) in cloud offeringsfootnote:[Stephen
+O'Grady, What AWS Tells Us About Heroku 2.0. RedMonk, June 23, 2021]. By
+focusing on PaaS solutions, the cooperative could foreground user
+experience while implementing a transparent, cost-plus pricing model.
+
+[arabic, start=7]
+. {blank}
++
+____
+Imagine ubiquitous self-awareness, attention to detail, curiosity, and
+cognitive flexibility
+____
+
+The evolution of Mondragón's structure illustrates why education and
+continuous learning and exploration must be core to a software
+cooperative. As Kasmir details, Mondragón grew from individual
+cooperatives into a complex network with a Cooperative Congress. This
+centralization was driven by the need to respond to economic crises and
+increased competition from Spain's entry into the European Economic
+Community. However, some workers perceived this shift as a "dissolution
+of democracy," feeling that decision-making power was moving further
+away from the shop floor. This (arguably context-specific) tension
+between organizational efficiency and grassroots democratic control
+parallels challenges in modern tech companies. At OpenAI, for instance,
+the rapid growth of the company and the high-stakes nature of AI
+development led to a governance crisis that the majority of employees
+were ill-equipped to critically evaluate.
+
+Critical thinking is not just about developing individual skills, but
+about creating organizational cultures and structures that encourage
+healthy skepticism and thorough analysis. In Mondragón, workers
+mobilized against attempts to widen salary disparities, demonstrating
+the potential power of an engaged and thoughtful workforce. However, the
+OpenAI situation reminds us that collective action, while powerful,
+needs to be grounded in comprehensive understanding and careful
+deliberation. In both cases, we see the need for organizational
+structures that not only allow for democratic participation but also
+ensure that participants have the knowledge and presence of mind to make
+informed decisions about complex issues.
+
+These examples underscore the need for transparency, continuous
+learning, and robust mechanisms for debate and dissent. They challenge
+us to think about how to balance expertise with broad participation, how
+to cultivate leadership that facilitates rather than dominates, and how
+to ensure that democracy and solidarity can withstand rapid changes in
+technological and animal spirits.
+
+Understanding how and why to build alternative economic structures
+requires understanding the mutually reinforcing processes of capitalism
+and racism - from the transatlantic slave trade to modern-day labor
+market segmentation. Any attempt to create a more equitable economic
+model must learn this history and its ongoing damages. For a software
+cooperative, this could mean a journal or book club during work hours.
+Such a forum could provide a space for members to engage with
+contemporary scholarship that analyzes issues of racial justice through
+a lens of racial capitalism. It might begin with Part One of
+[.underline]#Resisting Borders and Technologies of
+Violence#.footnote:[Mizue Aizeki, Matt Mahmoudi, and Coline Schupfer,
+eds., Resisting Borders and Technologies of Violence, New York, NY:
+Haymarket, 2024] Through readings and discussions, members could learn
+how racism continues to shape the tech industry and the broader
+political economy.
+
+[arabic, start=8]
+. {blank}
++
+____
+Economic Analysis of Cooperative Models
+____
+
+While working to actualize alternative economic models, cooperatives
+navigate existing market realities. Lee's (2017) market analysis reveals
+why enterprises cannot survive through price competition alone - they
+must develop governance mechanisms to ensure stable sequential
+production.footnote:[Lee at 142] In other words: to stay in business, an
+enterprise must continuously advance funds to buy inputs and pay
+workers, then recover these costs through sales, only to advance funds
+again for the next production period. This cycle must generate enough
+revenue to not only cover costs but also maintain necessary reserves and
+fund growth. If prices fall too low, or if the cycle is interrupted, the
+enterprise cannot continue operating. Traditional firms develop
+governance mechanisms like trade associations to prevent destructive
+price competition from breaking this cycle. The second-degree
+cooperative structure proposed earlier could enable similar market
+stabilization while democratizing its implementation. It could help
+reveal the complex dynamicsfootnote:[An examination of market governance
+could involve studying pricing mechanisms, entry barriers, and control
+structures within the industry. It could analyze how changes in pricing
+affect the quantity of products or services sold (studying market demand
+curves). It could use tools like the Herfindahl-Hirschman Index (Lee at
+156) to assess the level of competition and identify potential
+collaborators or competitors.] and structures shaped by established
+players without replicating their monopolistic practices. In developing
+such structures, cooperatives could find strategies to operate within
+them and potentially reshape themfootnote:[Tankus, Nathan and Herrine,
+Luke, Competition Law as Collective Bargaining Law (May 5, 2022).
+Cambridge Handbook of Labour in Competition Law, Cambridge University
+Press (2022), Available at SSRN: https://ssrn.com/abstract=3847377.].
+
+This perspective aligns with Zhang et al.'s (2024)
+findingsfootnote:[Zhang, J., Zamani, E. D., Gerli, P., & Mora, L.
+(2024). Co-constructing cooperative value ecosystems: A critical realist
+perspective. Information Systems Journal, 1–41.
+https://doi.org/10.1111/isj.12549] on digital platform cooperatives
+(DPCs). Their study identifies "co-constructing cooperative value
+ecosystems" as a core category, emphasizing how DPCs are actively
+creating new economic structures rather than simply operating within
+existing ones.footnote:[Zhang et al.'s study identifies generative
+mechanisms such as "collective identity and empowerment" and
+"government-community symbiosis," illustrating how cooperatives can
+foster change through both internal dynamics and external relationships.
+Their focus on contextual conditions, including "grassroots mobilization
+and advocacy" and "legislative frameworks for cooperative integration,"
+underscores the role of human agency and institutional structures in
+shaping economic change.]^,^footnote:[The cooperative model could
+potentially offer slower and steadier growth by maintaining strong
+open-source principles. This approach could be particularly attractive
+in the "Post-Valkey World," (Stephen O'Grady,
+<https://redmonk.com/sogrady/2024/07/16/post-valkey-world/>) where
+there's increasing concern about the stability of open-source licenses.]
+However, these structures must enable the cooperative to maintain
+sequential production - generating sufficient revenue to cover costs and
+fund continued operations while building necessary reserves.
+
+Cooperatives are not immune to external pressures and influences. In the
+late 1980s, the impact of neoliberal and technocratic impulses was
+tangible on the Mondragón shop floor. As one worker in Clima recounted:
+"They said they were coming to organize the factory. They said Clima
+would get seventy-five million pesetas more [a year] just by
+reorganizing. They said that, on average, people had to increase
+productivity by 18 percent. Some people had to increase 30 percent. They
+said they were not going to make us work faster, just cut out dead
+times." The pursuit of efficiency could lead to increased work
+intensity, potentially undermining the cooperative's original goals of
+worker empowerment and wellbeing.
+
+Kasmir (1996) describes how Arizmendiarrieta saw education as key to
+"the emancipation of a class or of a people." However, in light of
+recent experiences, we might expand this vision of education beyond
+technical skills to include critical analysis of organizational
+structures, ethical implications of technology, and the complexities of
+governance.
+
+While cooperatives aim to advance social democracy, complex economic
+systems cannot be fully controlled or predicted. Cooperatives could
+adopt flexible approaches like cost-plus pricingfootnote:[A cost-plus
+pricing approach could use the formula: p = EATC~B~ × (1 + r), where p
+is the price, EATC~B~ is the enterprise average total cost at budgeted
+capacity utilization, and r is the markup rate collectively determined
+by the cooperative (see Lee at 159). The markup r would be established
+through democratic processes, considering factors such as desired
+reinvestment, community contributions, and fair worker compensation.].
+This approach aims to cover costs and generate profits for reinvestment,
+worker benefits, and community initiatives.footnote:[The International
+Cooperative Alliance (ICA) provides guidance on how cooperatives handle
+financial matters, including raising capital, dealing with surpluses,
+and managing reserves (ICA,
+<https://perma.cc/Y2RE-3MUA[[.underline]#https://perma.cc/Y2RE-3MUA#]>,
+p 29, 2015). Software cooperatives could adapt these principles; they
+might establish indivisible reserves to ensure long-term stability, or
+develop innovative ways to raise capital, such as member investment
+accounts or community shares. While engaging with larger tech ecosystems
+and seeking funding, software cooperatives must vigilantly maintain
+their autonomy (ICA, p 46, 2015). This might mean carefully structuring
+partnerships with tech giants, ensuring that any external investments
+come without voting rights, and maintaining majority member ownership
+and control in all circumstances.]
+
+Cooperatives could form (or join preexisting) inter-cooperative
+associations or federations inspired by traditional trade associations.
+These structures could facilitate knowledge sharing, enhance market
+influence, and promote ethical practices[multiblock footnote omitted].
+Unlike traditional trade associations that often prioritize profit
+maximization, cooperative federations could balance economic viability
+with societal goals.footnote:[This vision for inter-cooperative networks
+builds upon a long tradition of cooperative federations. From medieval
+guilds that set standards across towns to the International Cooperative
+Alliance (ICA) formed in 1895, cooperatives have long recognized the
+power of collaboration (Schneider, 2018). The ICA provides examples of
+how cooperatives work together through federations and apex
+organizations (ICA, 2015, <https://perma.cc/Y2RE-3MUA>, p 25).
+Inter-cooperative governance structures could help address challenges of
+coordination and competition. In the tech industry, this could manifest
+as collaborative software development platforms.]
+
+While cooperatives offer promising alternatives to traditional business
+structures, they operate within a broader economic and environmental
+context that presents challenges. Since combustion engines became
+widespread ~ 265 years ago, humans have sunk ~ 145 ppm-worth of CO~2~
+into the Earth’s atmosphere. Beneath these dry numbers is breathtaking
+damage. Taking stock of the damage reveals that our individual
+arrangements — e.g., our 401(k) accounts — intertwine with the global
+infrastructure of fossil fuel extraction and combustion.
+
+The venture capitalist — anyone with a 401(k) — is perpetually in search
+of their exit. There is no exit, and there is no outside. We are always
+already part of an interconnected web of social, economic, and power
+relationships.footnote:[Michel Foucault, _The History of Sexuality,
+Volume 1_. See also Ballerinas on the Dole with Colleen Hooper, Money on
+the Left.
+https://moneyontheleft.org/2022/02/08/ballerinas-on-the-dole-with-colleen-hooper/]^,^footnote:[Worker-owners
+should have a mechanism to “cash out” their equity, albeit through much
+more constrained transaction volumes than the NYSE. In other words there
+could be limits on transaction volume, size, timing, counterparty,
+counterparty reserve level, and so on. Counterparties could be
+restricted to affiliated cooperatives, or a single agent representing
+the full cooperative membership.] Thinking that we can opt out of the
+consequences of our choices — even the ones long ago made by “others” —
+is delusional.
+
+Worker-owned cooperatives could be part of a reinvigorated public sphere
+and civil society. As macroeconomists have pointed out,footnote:[William
+Mitchell, “There is no need to issue public debt”, Blog post, 3 Sept
+2015.
+<https://billmitchell.org/blog/?p=31715[[.underline]#https://billmitchell.org/blog/?p=31715#]>.
+See also William Mitchell, L. Randall Wray, and Martin Watts,
+Macroeconomics. Red Globe Press, 2019 at 499. See also ibid. at 533.]
+monetary sovereigns can fund public programs like Social Security
+without relying on debt issuance or the whims of financial markets.
+Social Security (or an analogous public mechanism) could, therefore,
+provide for retirees everything that the 401(k) does — even if every
+publicly-traded company decided to go private and IPOs stopped
+happening. Relying on speculative investments for retirement security is
+both precarious and unnecessary when public solutions are
+available.footnote:[To illustrate how this scenario is more plausible
+than you might think, consider TreasuryDirect. This national institution
+serves retail customers on a daily basis. TreasuryDirect could
+automatically set up an account for every US person who does not already
+have one. Similar to how it did for the Consumer Financial Protection
+Bureau, Congress could authorize sufficient dollar transfers from the
+Board of Governors of the Federal Reserve System in perpetuity for
+TreasuryDirect to match savings deposits at 1:1, 2:1, 3:1, or any
+multiple necessary for that saver to have a dignified retirement. (This
+would involve amending Title 31 [Treasury], Title 26 [IRS data sharing],
+and the Federal Reserve Act.)]
+
+Cooperatives present an alternative to traditional business structures
+by distributing ownership among those who contribute their labor (and
+there are far more types of labor than are typically acknowledged). This
+distribution could influence, but would hardly control, complex
+macroeconomic outcomes! Cooperatives should aim to equitably distribute
+wealth in a constitutively high-demand, tight-full-employment,
+guaranteed-jobs economy,footnote:[Pavlina R. Tcherneva, The Case for a
+Job Guarantee. Polity, 2020.] and contribute to a green “just
+transition”footnote:[Analogously during World War 2 in the US, labor
+unions were important to keeping profit margins and executive
+compensation in check; this is why the benefits of running the economy
+hot did not all accrue to the already-wealthy.]. However, the actual
+results cannot be precisely engineered; they will emerge from countless
+local interactions, against a Federal Government fiscal policy backdrop
+of formidable influence.
+
+Reimagining economic structures through cooperatives and other forms of
+public power challenges the idea that current configurations are
+inevitable or optimal.footnote:[Following is another example of a
+suboptimal status quo. Given all that needs repair, the idea that
+_involuntary_ unemployment is sometimes _necessary_ for the greater good
+of inflation control seems more than a little preposterous. In other
+words, people eager to work are being turned away because, supposedly
+and incomprehensibly, nobody in their community can find anything for
+them to do (or they could, but if they did, it would blow up the price
+of gasoline and eggs).] The historical approach of critical
+realist-grounded theory supports this challenge; the approach recognizes
+that economic structures are historically contingent and shaped by human
+decisions and actions. As Lee argues, historical change is not
+predetermined or cyclical, nor does it follow any grand narrative or
+inevitable path. Instead, it is open-ended and can take various forms;
+it “can just only be change.”footnote:[Lee, 2017, p 30.]
+
+[arabic, start=9]
+. {blank}
++
+____
+Maintaining Solidarity and Labor Connections
+____
+
+Mondragón's history underscores the importance of maintaining
+connections with broader labor movements and fostering internal
+solidarity, even as organizations grow and evolve. As Kasmir notes,
+"After the [1974] Ulgor strike [leaders were fired via a majority vote],
+cooperators had the reputation of not expressing solidarity with the
+rest of Mondragón's working class, and they were seen as increasingly
+isolated in their own privileged work world."
+
+The 2013 collapse of Fagor Electrodomésticos provides crucial lessons
+about how solidarity mechanisms can become disconnected from effective
+decision-making. While the cooperative maintained formal democratic
+structures and inter-cooperative support systems, there emerged what
+Ortega and Uriartefootnote:[Ortega Sunsundegi, I., & Uriarte Zabala, L.
+(2015). Reios y dilemas del cooperativismo de Mondragón tras la crisis
+de Fagor Electrodomésticos. LANKI, Instituto de Estudios Cooperativos,
+Mondragon Unibertsitatea. Retrieved from http://www.lanki.coop] (2015)
+describe as a growing divide between workers and what was nominally
+their own enterprise. This organizational separation reflected deeper
+ideological transformations:
+
+Las influencias de lo que algunos han The influences of what some
+
+llamado "la izquierda fordista" son have called "the Fordist left"
+
+palpables en este sentido. Es esta are palpable in this regard.
+
+una cultura de la izquierda que se This is a leftist culture that
+
+expande en la fase del capitalismo expands in the phase of welfare
+
+del bienestar, para quien los capitalism, for whom the factors
+
+factores del desarrollo económico of economic development are
+
+son un hecho dado al que no merece considered a given that does not
+
+la pena prestar demasiada atención, merit much attention. It focuses
+
+y que centra su acción en una instead on a dynamic of demands,
+
+dinámica reivindicativa en pos de pursuing greater gains and
+
+mayores conquistas y derechos para rights for the working class in
+
+la clase trabajadora en la lucha the struggle for a fairer
+
+por el reparto de la riqueza distribution of the economic
+
+económica generada. wealth generated.
+
+This pattern implies a breakdown of integrated decision-making. The
+authors reveal how deeply this separation has been naturalized when
+discussing challenges on the Governing Council, which is composed of
+worker-members who maintain their regular jobs while serving on the
+council:
+
+En estas circunstancias no es In these circumstances, it is
+
+extraño oír voces que explicitan not unusual to hear voices
+
+la falta de conocimientos highlighting the lack of
+
+y de competencias suficientes knowledge and adequate skills
+
+de los miembros de este órgano, of the members of this body,
+
+cuando en situaciones muy who, in very complicated
+
+complicadas, tienen que tomar situations, are required to
+
+decisiones muy difíciles sobre make very difficult decisions
+
+temas que en ocasiones tienen on issues that sometimes
+
+una dimensión técnica no fácil involve a technical dimension
+
+de comprender that is not easy to understand
+
+While Ortega and Uriarte propose giving council members more time and
+support - reasonable tactical solutions - their framing implicitly
+accepts a problematic division between technical and social expertise
+that should never have existed in the first place. Instead of workers
+participating meaningfully in strategic choices about their enterprise's
+future, and seeing themselves as responsible for the enterprise's
+sustainability, they increasingly related to management as traditional
+labor, focused on defending benefits from an apparently separate
+management structure, rather than engaging with fundamental business
+challenges.
+
+This ideological separation reinforced and was reinforced by the growing
+operational divide between technical and social governance. This
+disconnect became particularly problematic during the 2007-8 financial
+crisis, when:
+
+la caída del 65% the 65% drop
+
+del mercado español [provocó] in the Spanish market
+
+una reducción en la facturación [had] led to a reduction
+
+de FED de 800 millones de euros in FED's turnover of
+
+(de los 1.800 millones de euros 800 million euros (from
+
+en ventas alcanzados en el 2006 1.8 billion euros in sales
+
+a los 1.000 millones de euros in 2006 to 1 billion euros
+
+en 2008). in 2008).
+
+The global financial crisis not only devastated sales but exposed the
+deeper cultural transformations within the cooperative. As Ortega and
+Uriarte explain:
+
+Este proceso coincide, a su vez, This process coincides, in turn,
+
+con el relevo de la primera with the transition from the first
+
+generación de directores por una generation of directors to a new
+
+nueva generación de perfil "más generation with a "more technocratic"
+
+tecnócrata" y en el que el carisma profile, where the charisma and
+
+y la capacidad de liderazgo que leadership qualities attributed to
+
+se atribuyen a las generaciones previous generations are gradually
+
+anteriores se van diluyendo. fading.
+
+This transition led to what some veteran members characterized as
+"cooperativismo neoliberal":
+
+En estas nuevas condiciones se afirma In these new conditions, it is
+
+que el pensamiento cooperativista said that cooperative thinking
+
+entra en declive y se abre paso "un is in decline, and a "neoliberal
+
+sistema cooperativista neoliberal" cooperative system" is emerging,
+
+en el que la gente empieza a pensar in which people begin to think
+
+más "en la cartilla, en los dineros, more "about their accounts, about
+
+en los intereses y no en la money, about personal interests,
+
+cooperativa". and not about the cooperative."
+
+This transformation might parallel what Hopper & Hopper term
+'(so-called) Experts' - MBA-trained managers who prioritize financial
+metrics over operational knowledge and integrated
+decision-making.footnote:[While Ortega and Uriarte's description of the
+'more technocratic' new generation of directors and the subsequent
+decline of cooperative thinking in favor of financial considerations
+suggests similar patterns, we would need more detail about these
+managers' backgrounds, training, and specific approaches to be confident
+of such an equivalence.] The shift Ortega and Uriarte document aligns
+with broader patterns Hopper & Hopper identify in the degradation of
+managerial practice.
+
+The solidarity mechanisms of the broader Mondragón network, while
+well-intentioned, may have inadvertently exacerbated this dysfunction.
+According to some interviewees, inter-cooperative monetary aid may have
+had
+
+un efecto anestésico, an "anaesthetic" effect —
+
+en el sentido de que meaning it may have
+
+han evitado una reacción más prevented a stronger response
+
+contundente por parte de la from the cooperative. They
+
+cooperativa, y el pensamiento also think that if there had
+
+de que si hubiera habido hace been a little less solidarity
+
+años algo menos de solidaridad years ago, perhaps Fagor
+
+se hubiera actuado, quizá, de Electrodomésticos would have
+
+una manera más responsable acted more responsibly by
+
+empujando a Fagor being "pushed to do its
+
+Electrodomésticos "a hacer homework."
+
+sus deberes".
+
+These challenges culminated in a profound disconnect between workers and
+what was nominally their own enterprise. The authors note:
+
+Uno de los hechos que especialmente One of the facts that was
+
+llamaba la atención en el contexto especially striking in the
+
+de las manifestaciones, las context of the demonstrations,
+
+declaraciones públicas y entrevistas public statements, and media
+
+en los medios de comunicación de interviews of Fagor
+
+socios de Fagor Electrodomésticos, Electrodomésticos partners was
+
+era la gran distancia que reflejaban the noticeable distance that
+
+los socios respecto a lo que, en the partners displayed regarding
+
+cuanto a la propiedad por lo menos, what, at least in terms of
+
+era su propio proyecto de empresa. ownership, was their own
+
+business project.
+
+This pattern, where workers react to decisions rather than participating
+in their formation, continues to manifest in contemporary tech
+organizations. Like Fagor's workers, OpenAI employees lacked the
+integrated context needed for genuine strategic participation when
+OpenAI's board briefly removed Sam Altman as CEO in 2023. As suggested
+earlier in section 5, workers' immediate solidarity with the Altman
+seems to have prevented deeper consideration of governance issues. Both
+cases demonstrate how formal deliberative structures, when separated
+from day-to-day operational integration, can lead to strategic
+blunders.footnote:[Admittedly, 2007-era consumer appliance manufacturing
+at the world's largest industrial worker cooperative is a different
+context from a 2023 GenAI Silicon Valley startup.]
+
+Our proposed ensemble programming and rotation practices aim to address
+these failure modes directly by preventing the separation of technical
+and social governance, and maintaining radically-integrated
+decision-making to prevent class formation. However, these practices
+would probably need be complemented by robust mechanisms for solidarity
+during crisis. The Fagor experience shows that formal democratic
+structures alone are insufficient.
+
+The goal is not just to prevent class formation but to create conditions
+where genuine strategic thinking emerges from collective practice rather
+than being imposed from above. As Stacey and Mowles remind us,
+organizational patterns emerge from countless local interactions. The
+Fagor case shows how these patterns can gradually shift toward
+separation and hierarchy even within formally democratic structures. Our
+challenge is to create patterns that consistently regenerate integration
+and collective capability instead.
+
+[arabic, start=10]
+. {blank}
++
+____
+Problematizing the Lone Genius Myth
+____
+
+Software development demands collaborative effort, yet the tech industry
+clings to organizational structures that privilege individual authority
+over collective wisdom. In 2024, the U.S. tech sector remains enthralled
+by the "genius founder in a garage" narrative, despite evidence that
+this mythology undermines both innovation and productivity.
+
+Consider a software development team: Their work is not just coding.
+Instead, they engage in what Lee identifies as an integrated production
+process characterized by:
+
+* {blank}
++
+____
+Real-time synthesis of diverse knowledge domains (technical, financial,
+user experience, business logic)
+____
+* {blank}
++
+____
+Inseparability of individual contributions from the collective output
+____
+* {blank}
++
+____
+Self-reinforcing generation of social relationships and knowledge
+capital
+____
+
+Lee's analysis of production's social dimension challenges both the myth
+of the solitary programmer and the false technical/non-technical
+dichotomy. Even a seemingly straightforward feature implementation
+requires simultaneous consideration of business requirements,
+infrastructure constraints, security architecture, user experience
+design, and financial parameters. Each decision point involves multiple
+domains of expertise working in concert, making artificial
+organizational divisions particularly destructive in software
+development.
+
+Leslie et al. show how fields that prize “innate” talent systematically
+exclude women and minorities.footnote:[Leslie et al., "Expectations of
+brilliance underlie gender distributions across academic disciplines,"
+Science, 2015] Gould demonstrates that such beliefs about natural
+ability serve to disguise and reinforce existing social
+hierarchies.footnote:[Gould, The Mismeasure of Man, 1996] When the
+software industry worships individual genius, it therefore does more
+than perpetuate a false narrative — it actively undermines innovation,
+inclusion, and democratic values.
+
+[arabic, start=11]
+. {blank}
++
+____
+The Two-Track Trap
+____
+
+The persistent separation between "specialist" and "traditional
+consulting" tracks at major firms (as of 2023) exposes a fundamentally
+Taylorist view of technical work - treating it as labor to be exploited
+rather than a core capability to be cultivated. This mindset is evident
+at "Big Four" consulting firms, where "specialists" face higher billable
+hours yet lower compensation than their "traditional" colleagues. Until
+COVID-19, population-scale changes in consumption, and unprecedented
+federal macroeconomic intervention disrupted this pattern, the message
+was clear: technical expertise was a resource to extract, not develop.
+
+Combined with "up or out" advancement policies, this two-track model
+produces a toxic dynamic: technical staff face overwork without paths to
+influence, while managers lose technical competence. This squanders
+human potential and undermines organizational performance.
+
+Today's U.S. political economy fundamentally weakens democratic
+participation by elevating individual tech oligarchs and venture
+capitalists above collaborative decision-making processes. The
+Jobs-Wozniak garage origin story has transcended myth to become a
+destructive organizational template that distorts power relationships
+throughout the industry. While individual contributions matter, our
+current legal frameworks and institutional norms uncritically prioritize
+them, creating a systematic bias against the collective nature of
+technological innovation and production. We should think of
+__all__footnote:[There is a small percentage of individuals, less than
+2% I would hazard, who are straight-up assholes (see generally Robert I.
+Sutton, The No Asshole Rule, Balance, 2010). More formally, we might say
+that some people score highly on all three of the “socially aversive”
+personality traits - psychopathy, Machiavellianism, and narcissism (see
+e.g. Daniel N. Jones and Delroy L. Paulhus, Introducing the Short Dark
+Triad (SD3): A Brief Measure of Dark Personality Traits, 2014). Spotting
+someone like this can be tricky, and misidentifying them (false positive
+or false negative) is unfair and costly. My point, without going too far
+down this rabbit hole, is that although we should always work to bring
+out the best in others, it would be naive to fight every single battle.
+I think that people with a pattern of toxic behavior are an important
+reason why new businesses fail. The best approach that I know of is to
+build a robust culture of skillful communication, and practice
+thoughtful, interdisciplinary research and development.] working people
+— _not_ just the founders — as rockstars. Not everyone has fully
+articulated their rock-stardom, but everyone has it in them (caveated by
+footnote 64). Leadership co-creates the stage.footnote:[One way to
+counteract structural biases towards commons enclosure by capital would
+be to prevent potential 'rug pulls' in open-source projects. A software
+cooperative could (a) adopt the Mozilla Public License (MPL) or Affero
+General Public License (AGPL) for its open-source software; and (b)
+assign the copyright to an outside open-source advocacy organization.
+This approach could provide legal protection for the cooperative's
+open-source commitments. This is not to suggest that all software should
+be open-source all of the time. The point is that if you are going to
+build a healthy community, then you should be intentional, deliberate,
+and clear about what you truly value.]
+
+[arabic, start=12]
+. {blank}
++
+____
+Important Side Note on Professionalism, Propriety, and Profanity
+____
+
+If you read footnote 64, you encountered the word _asshole_. We used
+this word because we believe it is the best tool for the job. Later, in
+section 16, we use the word _bullshit_, referencing David Graeber’s
+brilliant formulation “bullshit jobs.” Our philosophy on profane words
+in the workplace is that (1) a little goes a long way; and (2) when used
+carefully, they can prevent or curtail profane *deeds*. Moreover, there
+is a *big* difference between discussing _assholery_ as a personality
+trait we observe in a subset of people generally, on the one hand, and
+on the other, associating this word even indirectly with *particular*
+people with whom *we personally* have some form of relationship. We make
+the same caution for _bullshit_; it is one thing to talk about the
+sociological phenomenon of _bullshit jobs_; it is quite another to
+associate aloud this word with particular positions or roles already
+existing in our workplace!
+
+[arabic, start=13]
+. {blank}
++
+____
+Learning from the Great Engines
+____
+
+The Great Engine companies, before falling prey to what Hopper & Hopper
+call "the Cult of the (so-called) Expert",footnote:[Hopper & Hopper, The
+Puritan Gift, 2007] demonstrated how organizations can balance clear
+authority with broad participation and initiative. Our rotation system
+aims to recreate this balance in an explicitly democratic framework.
+
+Current organizational divisions create harmful silos that prevent
+natural integration across functions: technical insights don't shape
+strategy, client needs fail to guide technical direction, operations
+remain disconnected from architecture, and financial considerations
+poorly inform development. This fragmentation contradicts the Great
+Engine companies' successful model of organically interconnected
+work.footnote:[Hopper & Hopper, The Puritan Gift, 2007]
+
+Organizations artificially separate capabilities that naturally
+reinforce each other: technical mastery from coordination skills, client
+engagement from systems expertise, and operational knowledge from
+strategic planning. This fragmentation produces what Gregor Hohpe calls
+an "hourglass shape" of organizational understanding.footnote:[Gregor
+Hohpe, The Software Architect Elevator, 2020] Yet his suggestion to add
+an "architect" role would at worst be another artificial silo, and at
+best be a restoration of the middle manager to their former glory - that
+is, the glory at the pre-1970 “Great Engine” companies documented by
+Hopper & Hopper, before MBA programs ruined what it means to be a middle
+manager. Either way, a class hierarchy is left intact.
+
+[arabic, start=14]
+. {blank}
++
+____
+The Rhythm of Work
+____
+
+Treating technical work as an isolated specialty separate from core
+business functions creates artificial barriers that undermine both
+technical and organizational excellence. However, not all functions
+benefit equally from rotation. While ensemble programming may thrive on
+frequent rotation, client-facing roles demand stability. Client
+relationships depend on trust, shared context, and dependability - areas
+where rotation would be more limited.
+
+Recognizing that distinct types of work have distinct natural
+requirements differs fundamentally from imposing artificial divisions.
+While some work thrives on frequent rotation and fresh perspectives,
+other work needs deep relationship continuity. The challenge lies in
+understanding these natural shapes while preventing them from enabling
+class stratification. For example, the next section explains why the
+rhythm of client relationship management is fundamentally different from
+the rhythm of a mob programming session. And below, in section 16, we
+categorize various functions into “suitable for rotation” versus
+“suitable for voting” - however, this exercise is firstly meant as a
+demonstration; different practitioners would probably arrive at slightly
+different breakdowns (perhaps an opportunity to employ an aggregative
+mechanism).
+
+[arabic, start=15]
+. {blank}
++
+____
+Crafting Client Connections
+____
+
+While many technical functions would benefit from rotation, client
+relationships need continuity. Trust and shared understanding develop
+over time, making frequent transitions counterproductive. Yet this
+necessary stability creates risks: in traditional organizations, client
+relationships often become exclusive channels where key contacts
+accumulate concentrations of knowledge and power. When these individuals
+depart or change roles, valuable institutional memory vanishes, harming
+both client service and organizational effectiveness.
+
+The "Single External Contact Approach" would organize client
+relationships such that:
+
+* {blank}
++
+____
+One member-worker serves as “single contact” for at most one client
+contact
+____
+* {blank}
++
+____
+A dedicated-yet-rotating support team of worker-members backs each
+single contact-external counterpart pair
+____
+* {blank}
++
+____
+Team members rotate secondary roles to share knowledge
+____
+
+In addition to decentralization, the purpose of this system is not to
+enforce mathematically precise one-to-one relationships - which would be
+neither practical nor desirable - but rather to protect worker wellbeing
+by preventing client communications from becoming overwhelming. The
+'single contact' designation is primarily about establishing clear
+channels and boundaries. Technical tools like email filtering would
+support this - for example, routing emails from non-designated client
+contacts to separate queues rather than directly to a member's inbox.
+While members may naturally interact with multiple external contacts in
+various ways, having designated primary relationships may help maintain
+sustainable patterns of client engagement while preventing it from
+becoming all-consuming.
+
+This system could afford both stability and adaptability in client
+relationships. Small, consistent teams would support each client while
+role rotation enabled knowledge transfer. For example: Alice serves as
+single contact for Contact Y at Client X, supported by Bob and Charlie.
+The team maintains relationship continuity through:
+
+* {blank}
++
+____
+Rotating support roles
+____
+* {blank}
++
+____
+Documented client information and meeting minutes
+____
+* {blank}
++
+____
+Skill transfer (e.g., Alex shadowing Bob before transition)
+____
+
+With Alice as single contact for Contact Y at Client X, she builds
+consistent trust while Bob and Charlie provide active support. The
+support team structure enables smooth transitions - for instance, Bob
+may shift to single contact for Contact W at New Client Q, with new
+worker-member Alex taking his previous role. Clear, simple protocols
+guide all transitions, whether planned or circumstantial.
+
+Documentation, knowledge-sharing sessions, collaborative support work
+(pairing and mobbing), and informal networks would hopefully ensure
+information flows through the organization such that everyone feels like
+they know what they need to know (and that those feelings are not
+misleading). This organizational structure could balance relationship
+stability with distributed knowledge and power. The idea is that
+everyone is connected to the clients, but because the connection is
+constrained to a single contact per person, everyone also has plenty of
+bandwidth for other types of work. Democratic principles would guide
+operations while celebrating normal human connections.
+
+[arabic, start=16]
+. {blank}
++
+____
+Democracy in Action
+____
+
+The cooperative could manage its diverse work patterns through several
+mechanisms, which might include:
+
+* {blank}
++
+____
+Every member does ensemble programming
+____
+* {blank}
++
+____
+All contribute to strategic discussions
+____
+* {blank}
++
+____
+Each maintains _just one_ relationship with an external contact who is a
+single natural person (if there are not enough client contacts, then a
+perhaps a prospect, or perhaps a colleague at another firm)
+____
+
+* {blank}
++
+____
+Collective decisions on major changes
+____
+
+The cooperative should distinguish between two aspects of democracy:
+decision-making and reality-testing. Democratic decision-making involves
+collectively choosing courses of action - for instance, voting to
+allocate hours for developing a new documentation system. But democratic
+reality-testing is about maintaining the collective ability to honestly
+evaluate whether that system is serving any real purpose or has become
+mere ritual. Concretely, democratic decision-making could look like:
+
+* {blank}
++
+____
+Voting on resource allocation for new initiatives
+____
+* {blank}
++
+____
+Setting parameters for rotation schedules
+____
+* {blank}
++
+____
+Establishing or updating the compensation structure
+____
+
+Democratic reality-testing could look like:
+
+* {blank}
++
+____
+Mob programming sessions where impractical processes are immediately
+exposed
+____
+* {blank}
++
+____
+Regular opportunities for members to question whether established
+systems still serve their purpose
+____
+* {blank}
++
+____
+MVP demonstrations where proposed solutions must prove their value
+through working implementations
+____
+* {blank}
++
+____
+Protected spaces for discussing gaps between stated and actual value of
+work - while mindful of human cognitive bias to presume criticism and
+skepticism is more authoritative than constructive and positive
+proposals — and the underappreciated value of negative results
+____
+
+The mob programming pattern may be powerful for reality-testing because
+it is harder to maintain self-deception when working together in
+real-time. When six people are implementing a process at the same
+keyboard at the same time, its actual value (or lack thereof) would
+become quickly apparent.
+
+The two-track trap introduced earlier, in section 11, tends to generate
+what Graeber calls "bullshit jobs" - roles that exist primarily to
+manage other managers.footnote:[Graeber, Bullshit Jobs: A Theory, 2018]
+This happens through a predictable pattern:
+
+[arabic]
+. {blank}
++
+____
+Management becomes separated from technical work
+____
+. {blank}
++
+____
+This separation creates communication problems
+____
+. {blank}
++
+____
+New roles are created to address these problems
+____
+. {blank}
++
+____
+These new roles create further separation and communication issues
+____
+. {blank}
++
+____
+The cycle continues, creating layers of bureaucracy
+____
+
+As Graeber notes, many people in such roles privately question whether
+their jobs need to exist at all.footnote:[Graeber, 2018] This isn't
+because coordination itself is unnecessary, but because the separation
+of coordination from work creates the need for additional coordination
+of coordination.
+
+The Springfield Armory demonstrates that organizational effectiveness
+requires balancing structured coordination with inclusive
+participation.footnote:[HH at 50] While strategic decisions warrant
+democratic processes, routine operations often function better through
+streamlined methods like rotation. Success depends on aligning decision
+mechanisms with decision types. In other words, rather than
+micromanaging daily operations, democratic oversight would focus on
+establishing and updating protocols. This approach mirrors both
+Springfield's operational efficiency and the emergent leadership model
+seen in ensemble programming, where authority flows from active
+participation rather than formal appointment.
+
+Rotation challenges the false dichotomy between technical and managerial
+work. Instead of isolating technical expertise as a resource to exploit,
+rotation develops both technical and leadership capabilities across the
+organization, creating more effective operations by recognizing these
+skills as complementary rather than separate domains.
+
+*Rotation examples (short-term decisions):* on-call duties,
+documentation curation tasks, regular maintenance work, coordinating
+Single External Contact Approach
+
+Rotating as a way of preventing bureaucratic accumulation:
+
+* {blank}
++
+____
+No permanent coordination roles to defend
+____
+* {blank}
++
+____
+Direct experience prevents unnecessary processes
+____
+* {blank}
++
+____
+Fresh perspectives through regular changes
+____
+* {blank}
++
+____
+Natural simplification of procedures
+____
+* {blank}
++
+____
+Immediate feedback on process effectiveness
+____
+* {blank}
++
+____
+Integration of technical and managerial capabilities
+____
+
+*Voting examples (long-term decisions):* significant process changes,
+resource allocation principles, long-term strategic plans
+
+Voting as a way of preventing bureaucratic accumulation:
+
+* {blank}
++
+____
+Deeply and broadly understood legislative process
+____
+* {blank}
++
+____
+Auditable (within reason) decision-making processes
+____
+* {blank}
++
+____
+Tunable rotation patterns
+____
+* {blank}
++
+____
+Power to modify coordination protocols
+____
+
+The two-track antipattern is not new. Taylor's attempt to separate
+planning from execution led to similar proliferation of coordinators
+coordinating coordinators. As we saw in the Great Engine companies, the
+solution is not to eliminate coordination but to integrate it with the
+work being coordinated.footnote:[Hopper & Hopper, The Puritan Gift,
+2007]
+
+The Japanese _kacho_ system offered one approach to this integration,
+creating section heads who maintained both technical competence and
+coordination responsibilities.footnote:[Ibid., discussion of Japanese
+management practices at 115] However, the cooperative rotation system
+democratizes this integration across overlapping sets of members,
+encouraging leadership capabilities to develop naturally alongside
+technical skills throughout the organization. This management philosophy
+strengthens both personal and organizational capabilities. Individual
+workers develop hands-on expertise alongside strategic thinking skills.
+While maintaining their technical proficiency, they contribute to
+operational and strategic decisions.
+
+Flattened hierarchies and dispersed expertise could yield agile
+responses to market changes while reducing administrative overhead. This
+approach aims to preserve technical excellence by harmonizing individual
+contributions with collective judgment. The outcome could be an
+efficient organization that maintains essential coordination without
+succumbing to bureaucratic excess. Beyond its democratic merit, this
+model might deliver superior results.
+
+[arabic, start=17]
+. {blank}
++
+____
+Expertise Without Empire
+____
+
+Developing deep expertise is crucial for any organization. However,
+certain types of expertise, finance and auditing among them, can become
+chokepoints for democratic control.footnote:[Michael Power, The Audit
+Society; Townley, Reframing Human Resource Management; Jackall, Moral
+Mazes: The World of Corporate Managers; Rose & Miller, Governing the
+Present: Administering Economic, Social and Personal Life] The challenge
+is to develop expertise while preventing it from becoming a basis for
+class-like divisions or inappropriate authority.
+
+Financial expertise can become a power base through several mechanisms:
+control over resource allocation, monopolistic interpretation of
+financial metrics, and the mystification of operations behind
+mathematical complexity. A cooperative might addresses these risks by
+pioneering "finance mobs," where non-financial workers participate
+directly in financial operations. However, some finance operations lack
+collaborative tools that would be needed for regulatory compliance (the
+need for a designated accountable person). The cooperative could begin
+experimenting with collaborative financial work in limited, low-risk
+contexts. Like the early mob programming experiments at Hunter
+Industries, it would start small.
+
+As we discussed above in section 15, client relationship management
+requires special consideration. Unlike purely technical functions,
+client relationships involve deep trust, shared context, and emotional
+investment that make frequent rotation counterproductive. As we
+understand from clinicians in the field of healthcare, particularly
+mental healthcare, having to repeatedly rebuild trust relationships
+creates unnecessary strain for both parties.
+
+A cooperative could address these challenges through a system of
+dispersed responsibility. At its core is the Single External Contact
+Approach, where each member serves as the single contact for at most one
+contact at _at most_ one client. This arrangement maintains relationship
+continuity as the default.
+
+Worker-members could request relationship reassignments, subject to some
+review mechanism. Support roles would enable new members to gain client
+relationship experience before taking on single contact
+responsibilities.
+
+Financial operations have regulatory requirements for clear
+accountabilityfootnote:[Allen Holub problematizes the emphasis placed on
+accountability in workplace and corporate culture (#NoAccountability, 11
+July 2022,
+<https://holub.com/noaccountability/[[.underline]#https://holub.com/noaccountability/#]>).
+It stands in some tension with Hopper & Hopper’s approving quotation of
+Florence Nightingale: “someone has to be in charge”. What they and she
+mean are that someone needs to be dependable and able to explain the
+situation. What they perhaps underappreciate are the power dynamics that
+Holub criticizes.]; effective collaboration would require supporting
+tools that don't yet exist. Rather than trying to specify these tools up
+front, a cooperative could follow the pattern that worked for mob
+programming: let practitioners experiment with existing tools, observe
+what works, and gradually develop purpose-built tools that support
+emerging good practices. Perhaps look to models like surgical teams and
+aircraft cockpit crews, which successfully combine clear individual
+accountability with intensive real-time collaboration. Instead of trying
+to mob everything immediately, the cooperative could identify specific
+financial activities that could benefit most from real-time
+collaboration, such as:
+
+* {blank}
++
+____
+Complex financial modeling where multiple perspectives could catch
+errors
+____
+* {blank}
++
+____
+Budget planning sessions where diverse input is valuable
+____
+* {blank}
++
+____
+Risk assessment activities where different viewpoints are crucial
+____
+
+Successful financial collaboration requires more than just structural
+changes. The cooperative could develop a culture where questions are
+welcomed, mistakes are treated as learning opportunities, knowledge
+sharing is appreciated, and clear accountability coexists with
+collective responsibility.
+
+Progress toward more collaborative financial practices could be
+evaluated based on outcomes such as error reduction, regulatory
+compliance, and audit performance. This approach is intended to account
+for the evolutionary nature of successful organizational innovations,
+the need for tools and practices to co-evolve, the reality of regulatory
+requirements, the importance of starting small and learning from
+experience, and the critical role of cultural development.
+
+Following Lee's analysis of production as inherently
+interconnected,footnote:[Lee., p. 41] rotation could develop expertise
+throughout the organization while democratic processes could ensure it
+serves collective needs. This could create "distributed expertise" -
+where deep knowledge enriches the collective without creating
+overpowering chokepoints.
+
+This integrated understanding might manifest as:
+
+* {blank}
++
+____
+Financial workers rotating through software development
+____
+* {blank}
++
+____
+Developers participating in financial operations as tooling capabilities
+mature
+____
+* {blank}
++
+____
+Everyone communicating with a client sooner or later
+____
+* {blank}
++
+____
+Deep knowledge sharing
+____
+* {blank}
++
+____
+Major decisions combining expertise with democratic process
+____
+* {blank}
++
+____
+Democratic oversight ensuring expertise serves collective needs
+____
+
+The mechanics of rotation should be structured to prevent both
+bureaucratic accumulation and institutional amnesia. When individuals
+monopolize technical direction or weaponize code standards as barriers
+to entry, they create de facto authority. This problem compounds when
+system complexity or historical codebase knowledge becomes a source of
+unchecked influence.
+
+Once a system or process has been approved for scaling beyond its MVP,
+rotation could become mandatory but gradual (e.g. “no less than 10% and
+no more than 40% of the team may rotate out in any given quarter”),
+ensuring continuity of knowledge while preventing entrenchment. Original
+creators would all eventually rotate to other work, but not
+simultaneously - and they could still come back later. New members must
+overlap with existing team members for effective knowledge transfer.
+
+This pattern may help ensure that:
+
+* {blank}
++
+____
+No one builds permanent fiefdoms or power trips around particular
+systems
+____
+* {blank}
++
+____
+Knowledge is constantly distributed throughout the cooperative
+____
+* {blank}
++
+____
+Fresh perspectives regularly question existing processes
+____
+* {blank}
++
+____
+Systems remain comprehensible to new people or risk elimination
+____
+
+In traditional organizations, Infrastructure & Operations expertise
+often consolidates into informal power centers. This manifests through
+privileged control of deployments, exclusive production access, and
+crisis response authority. Most concerning is when feelings of
+employment precarity motivate accumulating technical debt for added job
+security—where critical systems are understood by only select
+individuals. Cooperatives could prevent such power accumulation through
+structured responsibility-sharing: rotating on-call duties and
+infrastructure roles.
+
+The prevention of power concentration may require multiple reinforcing
+mechanisms. In addition to the cooperative deliberately maintaining zero
+permanent roles, every worker-member could receive an equal budget for
+research, development, learning, and teaching - preventing financial
+resources from becoming a source of power imbalance.
+
+[arabic, start=18]
+. {blank}
++
+____
+Building the Collaborative Space
+____
+
+Drawing on Arendt's concept of "spaces of appearance" - where
+individuals reveal themselves through speech and action - we seek to
+enable self-expression while meeting operational needs, by recognizing
+that different work modes benefit from different environments.
+
+The cooperative could greatly benefit from a continuously refined
+physical and digital workspace. The layout could integrate focused quiet
+zones with collaborative open areas, supporting diverse work modes, from
+real-time ensemble programming to independent research. Both physical
+and virtual spaces could be configured to enable formal and informal
+knowledge exchange. Digital systems could maintain clear, accessible
+engineering documentation, complemented by scheduling tools for rotation
+management.
+
+Financial Collaboration Spaces. The cooperative's physical and digital
+infrastructure could also support the gradual development of
+collaborative financial practices. This means:
+
+* {blank}
++
+____
+Dedicated areas equipped for financial ensemble work with appropriate
+privacy and security
+____
+* {blank}
++
+____
+Digital tools that maintain clear audit trails while enabling real-time
+collaboration
+____
+* {blank}
++
+____
+Infrastructure for maintaining parallel traditional and experimental
+accounting processes during transition periods
+____
+
+Client relationship spaces could serve a different but equally vital
+function. These areas would support the development of deep
+understanding between each single contact and their external
+counterpart, while providing opportunities for support team members to
+contribute fresh perspectives without disrupting established
+relationships.
+
+Coordination spaces might connect these different work modes. Meeting
+facilitation roles could rotate regularly, while the composition of
+meeting attendees could evolve gradually to maintain both continuity and
+fresh input.
+
+We should note that perennial changes in team/committee/meeting
+composition does not _have_ to mean a constant sense of instability
+(although that does seem like a very important risk to beware of).
+People could rotate amongst a limited pool of other people. Thus someone
+rolling off a team would not be saying “Sayonara” but rather “See you
+soon!”
+
+Modulating these different patterns of work while maintaining a positive
+culture implies several mechanisms. For example, if an ensemble isn't
+working - maybe people are talking over each other, or someone's
+consistently dominating discussion - the members involved could discuss
+it in their end-of-day retrospective. These short sessions might focus
+on what went well that day and how to “turn up the good” as Woody Zuill
+says. Issues that affect multiple teams might need broader discussion,
+perhaps via asynchronous chat.
+
+A software cooperative faces exciting territory in expanding ensemble
+practices beyond programming. Many tasks have never been attempted as
+ensemble work. When encountering a new type of work, members could try
+it first as an ensemble, document the experience, and then adjust based
+on what was learned. It's perfectly sensible to use traditional methods
+after genuine experimentation (try it the weird way first).
+
+[arabic, start=19]
+. {blank}
++
+____
+Beyond Our Walls
+____
+
+While the ensemble can embody democratic values in daily small-team
+(shop-level) operations, these principles could also be reflected in the
+cooperative's overall (enterprise-level) governance mechanisms. Firstly,
+there are intriguing possibilities for quite large ensembles (e.g. 30+
+persons). Secondly, in the less experimental realm, overall governance
+mechanisms can draw from cooperative practices, such as electoral
+committees to oversee free and fair elections, board skills audits to
+ensure competent leadership, and governance codes. As the International
+Cooperative Alliance emphasizesfootnote:[International Cooperative
+Alliance, Guidance Notes to the Co-operative Principles, p 19. 2015.
+https://perma.cc/Y2RE-3MUA], “Democratic member control is protected and
+enhanced by effective co-operative legislation.” Software cooperatives
+should establish bylaws that detail voting procedures, term limits for
+elected positions, and mechanisms for member proposals and
+decision-making.
+
+The cooperative's commitment to democratic values could extend beyond
+its internal practices, shaping its interactions with the broader tech
+ecosystem and informing its approach to competition and innovation.
+While leveraging adversarial interoperability to compete in the tech
+landscape, the cooperative should respect user privacy. It should
+observe fair competition practices, advocacy for open standards, and a
+commitment to transparency. The cooperative should ensure its
+interoperability practices genuinely promote competition and user choice
+rather than inadvertently consolidating power.footnote:[See Cory
+Doctorow, The Internet Con: How to Seize the Means of Computation, 2023,
+at 55.] By maintaining a long-term vision of a more open and fair tech
+ecosystem, the cooperative could demonstrate that it is possible to
+compete effectively without resorting to the monopolistic practices it
+aims to challenge. This stance could differentiate the cooperative in
+the long run.
+
+[arabic, start=20]
+. {blank}
++
+____
+Engaging with Policy and Financial Institutions
+____
+
+While cooperatives aim to create alternative economic structures, they
+can also engage strategically with government policy. Cooperatives could
+advocate for supportive policies, such as preferential tax treatment,
+access to public contracts, or legal recognition of cooperative
+governance structures. Cooperatives could push for antitrust policy that
+recognizes the value of smaller, democratically-owned enterprises in
+maintaining competitive markets.footnote:[Governments also sometimes
+attempt to co-opt or control cooperative movements. For example, in the
+United States during the McCarthy era, some rural electric cooperatives
+were pressured to prove their 'American' credentials and distance
+themselves from leftist ideologies (Schneider, 2018).]
+
+Cooperatives navigate a financial landscape shaped by _as-is_ fiscal and
+monetary policy. Some recently-unearthed history of the Federal
+Reservefootnote:[Nathan Tankus, Revealed: The Federal Reserve's Secret
+1973 Plan to Bailout the Saving & Loan Industry That Very Nearly
+Happened. Notes on the Crises Blog, 24 Sept 2024.
+<https://perma.cc/6YVY-4NDX[[.underline]#https://perma.cc/6YVY-4NDX#]>]
+inspires us to suggest inclusive emergency lending. The Federal
+Reserve's 1973 plan to provide emergency liquidity support to the entire
+Savings & Loan industry via the Federal Home Loan Banks^80^ demonstrates
+the potential for central banks to support specific economic sectors.
+Cooperatives could advocate for the inclusion of worker-owned
+enterprises in such emergency lending programs, ensuring they have
+access to crucial liquidity during economic crises.
+
+Beyond engaging with central bank policy, cooperatives could proactively
+establish relationships with cooperative-friendly financial institutions
+from inception. Creating mutual aid agreements with other cooperatives
+for emergency lending and shared resources could provide an alternative
+to traditional financial power structures. These relationships should be
+built before they're needed - the time to establish credit lines is
+before facing potential predatory pricing from competitors.
+
+Cooperatives could also work to create cooperative-centered financial
+institutions (also suggested earlier, in Section 5, and in footnote 29).
+Many essential social services (like kindergartens, elder care, and
+Linux) cannot generate sufficient revenue for conventional loan
+repayment, even with cross-subsidization from more profitable
+cooperative ventures. This is not a flaw in these goods and services -
+it reflects their fundamental nature as public goods that shouldn't be
+subject to market logic.
+
+Rather than treating this as a problem to be solved through creative
+financial engineering or alternative currencies, cooperative banks could
+embrace their potential role as interfaces between public funding and
+social provisioning. A cooperative bank could:
+
+[arabic]
+. {blank}
++
+____
+Act as a conduit for public funding, using its chartered status and
+regulatory compliance infrastructure to efficiently channel public
+resources toward social needs
+____
+. {blank}
++
+____
+Provide transparent accounting and democratic oversight of how public
+resources and funds are used, ensuring accountability to both government
+agencies and local communities
+____
+. {blank}
++
+____
+Document the real economic value created by social services, without
+requiring them to meet impossible profitability targets
+____
+. {blank}
++
+____
+Structure the financial flows to maximize social benefit rather than
+financial return
+____
+. {blank}
++
+____
+Complement rather than replace public funding, while improving its
+democratic character
+____
+
+This approach recognizes that the real constraints on social services
+are not financial but material - the availability of skilled workers,
+suitable facilities, and necessary supplies. When these real resources
+exist, the role of a cooperative bank is not to make social services
+"profitable" but to facilitate their provision through a combination of
+public funding and democratic governance.
+
+Rather than trying to replicate traditional banking's focus on
+self-amortizing loans and profit generation, cooperative banks could
+pioneer new forms of hybrid public-cooperative finance. By interfacing
+between public funding sources and cooperative service providers, they
+can help build a more democratic economy that truly serves social
+needs.footnote:[Just as William Edwards Deming in Japan showed how
+letting workers stop the production line to address defects led to
+better manufacturing processes (Steve Keen & Phil Dobbie, Co-ops change
+the game, Debunking Economics Podcast, Oct 19, 2024), cooperative banks
+could empower their workers to identify and address systemic issues in
+banking practices. As Keen notes, when workers in Japanese factories
+could stop the line, "The worker explains what's failing... and then the
+idea gets implemented, the worker gets a bonus out of it, and even
+people working in a production line found their jobs interesting." This
+principle of worker empowerment and process improvement could be adapted
+to banking operations.]
+
+Software cooperatives might leverage international recognition and
+support when advocating nationally. The United Nations and the
+International Labour Organization (ILO) recognize cooperatives. ILO
+Recommendation 193 on the Promotion of Cooperatives provides a framework
+for governments to develop supportive policies for
+cooperativesfootnote:[ICA, Guidance Notes to the Co-operative
+Principles,
+<https://perma.cc/Y2RE-3MUA[[.underline]#https://perma.cc/Y2RE-3MUA#]>,
+p 49, 2015.].
+
+Cooperatives should also engage proactively with antitrust policy to
+ensure a level playing field and recognition of their unique structure.
+They should advocate for antitrust frameworks that distinguish between
+coordination among workers or small producers and anticompetitive
+behavior by large corporations. This could involve pushing for safe
+harbor provisions that allow cooperatives to engage in certain forms of
+coordination without triggering antitrust scrutiny, provided they meet
+specific criteria for democratic ownership and control. (We will revisit
+this idea below in section 21.) Cooperatives could also advocate for a
+more nuanced approach to vertical integrationfootnote:[The cooperative
+could approach vertical integration differently from traditional tech
+giants, emphasizing openness, transparency, and democratic control. This
+could involve creating federations of specialized cooperatives across
+the tech stack, using open standards and protocols for all integrations,
+and ensuring major integration decisions involve the entire membership.
+The cooperative could maintain a modular architecture to prevent
+lock-in. This approach could transform vertical integration from a tool
+of monopolistic control into a means of building a resilient, efficient,
+accountable, and mutually supportive technological ecosystem.] in
+democratically-owned entities, arguing that traditional concerns about
+market power may not apply in the same way to cooperative structures.
+Furthermore, they could propose new metrics for assessing market
+competition that go beyond consumer prices to consider factors like
+worker welfare, community impact, and long-term innovation. Cooperatives
+could help shape an antitrust regime that fosters a more diverse and
+democratic economy.
+
+[arabic, start=21]
+. {blank}
++
+____
+Market Governance, Legal Framework, and Enterprise Survival
+____
+
+A viable software cooperative needs three foundational elements. First,
+it needs market governance mechanisms that enable stable operations
+without monopolistic practices. Second, it needs technical
+implementations that support democratic control and federation. Third,
+it needs legal frameworks that protect cooperative structures while
+ensuring compliance. How could these elements work together to create a
+resilient democratic organization?
+
+First, consider price stability. Lee (2017) identifies price competition
+as the "most important form of potential instability in a
+market."footnote:[Lee at 154] When prices fall below costs, enterprises
+fail. Yet price coordination can violate antitrust law. The cooperative
+must therefore create legitimate, transparent mechanisms for stable
+price formation. This means documenting internal costing methodology,
+implementing democratic processes for determining profit margins, and
+establishing clear price adjustment procedures.
+
+The cooperative must also maintain itself as a "going concern" through
+continuous cycles of production. This requires three key financial
+practices: working capital management, cost structure analysis, and
+growth planning. The cooperative needs sufficient reserves,
+relationships with cooperative financial institutions, and buffer funds
+for market fluctuations. Regular review of enterprise average total
+costs at budgeted capacity (EATC~B~) informs both operational decisions
+and long-term technology investments.
+
+External market pressures incentivize market management through two core
+strategies: institutional relationships and technical federation. To
+understand these strategies, we must first understand market governance.
+As Tankus & Herrine (2022) explain, "markets must develop and
+maintain—they must reproduce—institutions to manage quotidian threats to
+stability." When a software cooperative participates in ForgeFed or
+similar federation protocols, it is not just making a technical choice.
+It is helping build market governance institutions that support
+democratic enterprises.
+
+The first core strategy, institutional relationships, involves
+participating in what Lee terms "market governance organizations" -
+particularly software industry trade associations and technical
+standards bodies. The cooperative could engage with these organizations
+to maintain space for democratic approaches. For example, when HashiCorp
+changed Terraform's license, they demonstrated how market or investor
+pressures can force changes that harm the software commons. To resist
+such pressures, a cooperative can work with open source advocacy
+organizations in three ways: (a) assigning copyright to them as a
+mechanism of self-restraint; (b) leveraging their legal teams to defend,
+e.g., AGPL implementations; and (c) participating in standard-setting to
+ensure democratic values are represented.
+
+The second core strategy involves technical federation through open
+protocols and shared infrastructure. This requires directing profits
+toward developing independent tools and infrastructure. ForgeFed
+exemplifies this approach. As an ActivityPub extension for software
+forges, it enables federation between different code collaboration
+platforms. Users can interact across different hosting sites without
+creating multiple accounts. This transcends the traditional dichotomy
+between centralization on profit-oriented platforms and isolated
+independent hosting.
+
+These cooperative structures must operate within specific legal
+frameworks that both constrain and enable democratic governance. The
+Capper-Volstead Act of 1922 provides an instructive historical
+precedent: just as farmers needed collective power to avoid being
+crushed between powerful railroads and processors, today's software
+workers need collective power to avoid being squeezed between various
+platform monopolies.
+
+These mechanisms must operate within the "firm exemption" identified by
+legal scholar Sanjukta Paul - coordinating economic activity within the
+cooperative structure while avoiding illegal price fixing across firm
+boundaries. The pricing reflects direct labor costs, infrastructure,
+professional development, buffer fund contributions, and research
+allocations.
+
+Unlike traditional tech firms chasing exponential growth and
+monopolistic positions, the cooperative could structure its finances for
+sustainable steady-state operation with moderate surpluses. This reduces
+capital requirements while building long-term resilience.
+
+The strategy balances immediate survival needs with long-term
+transformation goals. This requires clear documentation of internal
+price formation, transparent governance processes, and regular (or
+perhaps real-time, via the ensemble pattern) legal review of practices.
+We aim to demonstrate that enterprises can compete effectively while
+building toward a more democratic economy.
+
+[arabic, start=22]
+. {blank}
++
+____
+Challenges
+____
+
+While mob programming and rotating leadership roles can help maintain
+democratic values in a software cooperative, dilution or co-optation of
+cooperative principles will probably be a persistent
+threat.footnote:[Schneider (2018) discusses examples of cooperatives
+facing such challenges, from rural electric cooperatives becoming
+increasingly detached from their member-owners to credit unions
+operating more like traditional banks.] Moreover, the software
+cooperative faces fundamental market challenges when competing with
+established tech giants, particularly regarding sequential production
+and capital requirements. Traditional firms can sustain losses during
+market downturns using reserves accumulated through earlier monopolistic
+practices. A cooperative must build comparable resilience through
+inter-cooperative networks and buffer funds.
+
+Lee's (2017) production analysis techniques offer ways to refine our
+processes while maintaining democratic principles. However, Goodhart's
+law warns that "When a measure becomes a target, it ceases to be a good
+measure." Over-reliance on specific metrics like pricing formulas or
+productivity measures could undermine cooperative values. To mitigate
+these risks, cooperatives could develop flexible evaluation systems that
+consider multiple factors and are less susceptible to manipulation -
+looking beyond traditional financial metrics. The ICA emphasizes that
+cooperatives work for the “sustainable development of their
+communities.”footnote:[ICA, Statement on the Co-operative Identity,
+<https://perma.cc/Y2RE-3MUA[[.underline]#https://perma.cc/Y2RE-3MUA#]>,
+p ii, 2015.]
+
+Developing effective collaborative financial practices presents unique
+challenges. Moving toward more collaborative financial work requires
+understanding both democratic ideals and practical constraints.
+
+Tool Development Challenges:
+
+* {blank}
++
+____
+Existing financial software assumes individual rather than collaborative
+work
+____
+* {blank}
++
+____
+Financial tools must maintain clear audit trails
+____
+* {blank}
++
+____
+Regulatory compliance features need to support rather than hinder
+teamwork
+____
+* {blank}
++
+____
+New tools must evolve based on actual practice rather than theoretical
+design
+____
+
+Regulatory Compliance Challenges:
+
+* {blank}
++
+____
+Individual accountability requirements must be maintained
+____
+* {blank}
++
+____
+Audit trails must clearly show decision ownership
+____
+* {blank}
++
+____
+Regulatory bodies may be skeptical of novel approaches
+____
+* {blank}
++
+____
+Compliance documentation must adapt to collaborative work
+____
+* {blank}
++
+____
+Professional liability considerations must be addressed
+____
+
+Cultural Development Challenges:
+
+* {blank}
++
+____
+Traditional financial roles may resist collaborative approaches
+____
+* {blank}
++
+____
+Teaching/learning must be balanced with operational needs
+____
+* {blank}
++
+____
+Clear accountability must coexist with collective responsibility
+____
+* {blank}
++
+____
+Trust must be built gradually through demonstrated success
+____
+
+These challenges suggest an incremental approach, grounded in Lee's
+analysis of how accounting procedures are “relatively enduring
+structure[s]”footnote:[Lee at 81] essential to enterprise survival. They
+provide “an important way of representing economic facts to
+management”footnote:[Id.] and “give social coherence and meaning to
+organizational behavior.”footnote:[Id.] As we also discussed earlier in
+section X, by experimenting incrementally while maintaining traditional
+methods, the cooperative could develop new collaborative practices
+without endangering its status as a going concern.
+
+The experience of surgical teams and aircraft crews shows that intensive
+real-time collaboration can coexist with clear individual accountability
+in high-stakes environments. However, these models evolved over decades
+of practical experience. We expect collaborative financial practices to
+require patience and persistence in development. The key is maintaining
+democratic principles while acknowledging that effective implementations
+must emerge from practical experience rather than theoretical design.
+
+With these practical challenges in mind, participatory decision-making
+in cooperatives could manifest as a system of rotating leadership roles,
+fostering skill development and power distribution among members.
+Supermajority-based approaches for major decisions could ensure all
+voices are heard, while clear processes for proposal development and
+implementation could maintain efficiency.footnote:[To protect against
+potential manipulation of democratic processes, implementing cooling-off
+periods could be beneficial. These would involve waiting periods between
+joining the cooperative and gaining full voting rights, as well as
+between proposing a change and voting on it. Such measures can prevent
+"raid" scenarios where threat actors might coordinate to force through a
+particular decision. This approach, inspired by blockchain governance
+mechanisms, (e.g. Vitalik Buterin, Proof of Stake: The Making of
+Ethereum and the Philosophy of Blockchains. Seven Stories Press, 2022 at
+275) balances the cooperative's commitment to democratic participation
+with the need to ensure that decision-making power is held by those with
+a genuine, long-term stake in the cooperative's success.]
+
+Tension between cooperative ideals and practical compromises is a
+recurring theme in cooperative historyfootnote:[Schneider, 2018],
+although the definition of “practicality” is debatable.footnote:[From
+the vantage point of this relatively affluent US worker in the year
+2024, concerns on the part of Mondragón managers in 1988 about the
+impracticality of the 4.5:1 pay ratio maximum seem outlandish.
+Educational resources in my admittedly privileged context are so
+abundant that professional skill development is limited only by
+imagination — and so vacancies should be fillable via internal hiring.]
+The key seems to be in making these decisions transparently and
+democratically, always with an eye towards preserving the cooperative's
+core mission and values. The ICA notes that larger cooperatives often
+develop multi-tiered democratic structures.footnote:[ICA, Guidance Notes
+to the Co-operative Principles,
+<https://perma.cc/Y2RE-3MUA[[.underline]#https://perma.cc/Y2RE-3MUA#]>,
+p 62, 2015.] In addition, digital tools might facilitate democratic
+participation at scale.
+
+Software cooperatives should conduct production analysis by examining
+their methods, cost structures, and efficiency - both at the
+shop/team/ensemble level and at more-general enterprise levels. This
+could include analyzing collective productivity, assessing development
+methodologies, and evaluating costs of tools and infrastructure. By
+tracking metrics like the EATC~B~, cooperatives can make informed
+decisions about pricing, resource allocation, and investments in
+research and development.
+
+Although it would be a mistake to scale immediately, keeping scale in
+mind seems prudent. This could involve developing modular architectures,
+implementing clear processes for onboarding new worker-owners, and
+creating standardized but flexible governance models.
+
+[arabic, start=23]
+. {blank}
++
+____
+Unpredictability
+____
+
+Despite its democratic structure, the cooperative will probably face
+internal conflicts and power imbalances. Complex responsive processes
+theoryfootnote:[Stacey & Mowles at 402. Power imbalances might arise
+from differences in nationality, wealth, gender, race, expertise,
+tenure, or personal charisma (Ibid at 349).] recognizes that power is a
+structural characteristic of all relationships and argues that conflict
+is an inherent part of organizational life. Within such complex patterns
+of interaction, bureaucratic accumulation - as Graeber
+arguedfootnote:[Bullshit Jobs at xxi] - often emerges as both a response
+to and generator of organizational challenges. The following strategies
+could help make the best of such challenges:
+
+[arabic]
+. {blank}
++
+____
+Power audits: Conduct periodic assessments of informal power structures
+within the cooperative, identifying emerging centers of disproportionate
+influence.
+____
+. {blank}
++
+____
+MVP requirement to prevent bureaucratic bloat: new systems would prove
+their value through working demonstrations; the same people proposing
+must implement; no specialized positions are created for new
+initiatives; and resources come from existing work time, making it
+difficult to ignore the trade-offs.
+____
+. {blank}
++
+____
+Mandatory inter-ensemble rotation to prevent bureaucratic entrenchment:
+no system can survive solely through its creators' advocacy; fresh
+perspectives regularly challenge assumptions; knowledge distribution
+prevents expertise-hoarding; and status would not accumulate around
+system "ownership"
+____
+. {blank}
++
+____
+Ensemble Programming to enable continuous reality-testing: impractical
+processes become immediately apparent; multiple perspectives catch
+unnecessary complexity; and knowledge transfers naturally through
+collaboration
+____
+. {blank}
++
+____
+Rotating facilitation: In addition to rotating between source code
+teams, implement a system of rotating facilitation roles in meetings and
+decision-making processes to prevent the consolidation of procedural
+power.
+____
+. {blank}
++
+____
+Anonymous feedback: Implement secure, anonymous channels for members to
+voice concerns about power imbalances or conflicts without fear of
+repercussion.
+____
+. {blank}
++
+____
+Transparency: Maintain access to all decision-making processes and
+financial information for all members.
+____
+. {blank}
++
+____
+Journal club for interdisciplinary articles of interest, with a
+Starbucks™ gift card for whenever somebody finds an article with at
+least 1 citation to Foucault _and_ everybody reads that article ahead of
+time.
+____
+
+These mechanisms create what we might call "institutional impermanence"
+- nothing can become permanent unless it repeatedly proves its value to
+new groups of people over time. When organizational structures must
+constantly rejustify their existence to fresh eyes, bureaucratic
+accumulation finds few footholds.
+
+The key is that these aren't just policies - they're structural
+safeguards that make bureaucratic accumulation physically difficult.
+Just as a well-designed building naturally guides foot traffic in
+certain directions, our goal is structures that naturally guide
+organizational evolution away from unnecessary complexity.
+
+Cooperative culture should tend to treat unexpected developments as
+opportunities rather than threats.footnote:[Stacey & Mowles at 191: “For
+Mintzberg, learning is trial-and-error…”] This could involve:
+
+[arabic]
+. {blank}
++
+____
+Flexible governance structures.
+____
+. {blank}
++
+____
+Encouraging experimentation and viewing 'failures' as valuable learning
+experiences.
+____
+. {blank}
++
+____
+Maintaining loose boundaries between the cooperative and _friendly and
+kindred elements_ of its environment, allowing for co-evolution with
+broader ecosystems.
+____
+
+Democratic ideals will face ongoing challenges in practice. Actively
+engaging with these issues could create a more resilient and democratic
+organization that sublimates emerging power dynamics rather than ignores
+them.
+
+[arabic, start=24]
+. {blank}
++
+____
+Determination
+____
+
+*Untitled Co-Op is going to be primarily worker-owned and
+worker-controlled, and it is going to do a lot of remote mob
+programming.*
+
+We should remunerate workers based on how many hours they worked (within
+health and safety limits), not when in the “hype cycle” they worked
+them.footnote:[This compensation policy would apply specifically to
+worker-members. For worker-members, everyone would receive the same
+hourly wage and the same rate of equity distribution (although any
+dividend payouts would be proportional to equity held). User-members
+would have a different incentive structure, potentially including
+patronage dividends, usage-based benefits, or a distinct class of
+membership shares. This approach aims to balance fair compensation for
+workers with meaningful engagement for users, while maintaining the
+cooperative's core principles. This policy draws partial inspiration
+from Mondragón and partial inspiration from Oxide Computer Company
+(https://web.archive.org/web/20240927021311/https://oxide.computer/blog/compensation-as-a-reflection-of-values/).]
+(And managers are workers too - no more and no less!) Business ownership
+should be distributed according to each worker’s contribution of time,
+provided it is made in good faith. This approach is both more fair and
+more fun. It incentivizes the success of the team, not just atomized
+individuals. By limiting ownership of first-class shares to natural
+persons and stake size to only what could be accrued by the hours
+contributed by a natural person, we avoid overly-powerful actors that
+would undermine democracy.footnote:[Like the 'unMonastery' experiment
+that sought to apply monastic principles to modern tech challenges
+(Schneider, 2018), we seek to bridge past and present in creating a more
+democratic future.] We should study network effects and how to use them
+to facilitate widespread human flourishing. Cooperatives need to
+explicitly and constitutively reflect on how their formal and informal
+structures and patterns affect behavior, ideas, and engagement of their
+members. Cooperatives can embody democratic values, encourage care, and
+build a sense of shared destiny — a plurality of commons where together
+we shape our worlds through words and deeds.
